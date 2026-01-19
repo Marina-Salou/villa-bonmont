@@ -1,0 +1,45 @@
+# Villa Bonmont Terres Noves - robots.txt
+# This file is designed to optimize search engine crawling while protecting sensitive pages
+
+# Default rules for all bots
+User-agent: *
+Allow: /
+Allow: /pages/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Disallow admin and sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /temp/
+
+# Disallow crawling of legal/policy pages (they don't need to rank)
+Disallow: /pages/privacy.html
+Disallow: /pages/cookies.html
+Disallow: /pages/legal.html
+
+# Allow specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow bad bots (optional - you can add more as needed)
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Crawl delay (milliseconds between requests)
+# Set to 1 second = 1000 milliseconds
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://villabonmont.com/sitemap.xml

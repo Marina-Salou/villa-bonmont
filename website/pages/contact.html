@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Villa Bonmont Terres Noves. Get in touch with Idoia for inquiries about your stay.">
+    
+    <link rel="canonical" href="https://villabonmont.com/pages/contact.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c2c2c;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: #2c2c2c;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #c9a866;
+            box-shadow: 0 0 0 3px rgba(201, 168, 102, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-block {
+            padding: 1.5rem;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .info-block h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .info-block p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .info-block a {
+            color: #c9a866;
+        }
+
+        .info-block a:hover {
+            color: #1a1a1a;
+        }
+    </style>
+    
+    <title>Contact | Villa Bonmont Terres Noves</title>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar-container">
+                <div class="logo">
+                    <a href="/" aria-label="Villa Bonmont home">Villa Bonmont</a>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/pages/interiors.html">Interiors</a></li>
+                    <li><a href="/#lifestyle">Lifestyle</a></li>
+                    <li><a href="/pages/about.html">About Idoia</a></li>
+                    <li><a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71" class="cta-link">Reserve</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" role="main">
+        <section style="padding: 4rem 1.5rem; max-width: 1000px; margin: 0 auto;">
+            <h1>Get in Touch</h1>
+            <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem;">
+                Have questions about Villa Bonmont? We're here to help. Reach out to Idoia for inquiries about your stay.
+            </p>
+            
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <form name="contact" class="contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required aria-required="true"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="info-block">
+                        <h3>Email</h3>
+                        <p>
+                            <a href="mailto:info@villabonmont.com">info@villabonmont.com</a><br>
+                            General inquiries and reservations
+                        </p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Phone</h3>
+                        <p>
+                            <a href="tel:+34-XXX-XXX-XXX">+34-XXX-XXX-XXX</a><br>
+                            (Calls preferred during business hours)
+                        </p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Address</h3>
+                        <p>
+                            Bonmont Terres Noves<br>
+                            Castelldefels, Catalunya 08348<br>
+                            Spain
+                        </p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Response Time</h3>
+                        <p>
+                            Idoia typically responds to inquiries within <strong>1 hour</strong> during the day.<br>
+                            For booking-related questions, please use Airbnb messaging.
+                        </p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Legal Inquiries</h3>
+                        <p>
+                            <a href="mailto:legal@villabonmont.com">legal@villabonmont.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <section style="margin-top: 4rem; padding: 2rem; background-color: #f5f5f5; border-radius: 4px;">
+                <h2>Booking Through Airbnb</h2>
+                <p>
+                    For availability, pricing, and reservations, please visit our 
+                    <a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71" target="_blank" rel="noopener noreferrer">Airbnb listing</a>. 
+                    All bookings are made through Airbnb's secure platform.
+                </p>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <nav class="footer-nav" role="navigation" aria-label="Footer navigation">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Villa Bonmont</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/pages/interiors.html">Interiors</a></li>
+                        <li><a href="/#lifestyle">Lifestyle</a></li>
+                        <li><a href="/pages/about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/pages/privacy.html" rel="noopener">Privacy Policy</a></li>
+                        <li><a href="/pages/cookies.html" rel="noopener">Cookie Policy</a></li>
+                        <li><a href="/pages/legal.html" rel="noopener">Legal Notice</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:info@villabonmont.com">info@villabonmont.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Villa Bonmont Terres Noves. All rights reserved.</p>
+            </div>
+        </nav>
+    </footer>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const email = form.querySelector('input[type="email"]').value;
+            const message = form.querySelector('textarea').value;
+
+            if (!email || !message) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            // In production, this should submit to a backend service
+            // For now, show success message
+            alert('Thank you for your message. Idoia will be in touch soon!');
+            form.reset();
+        }
+    </script>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
