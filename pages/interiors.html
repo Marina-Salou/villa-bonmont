@@ -85,9 +85,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
             color: #fff;
             transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .gallery-overlay-icon::before,
+        .gallery-overlay-icon::after {
+            content: '';
+            position: absolute;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-overlay-icon::before {
+            width: 20px;
+            height: 2px;
+        }
+
+        .gallery-overlay-icon::after {
+            width: 2px;
+            height: 20px;
         }
 
         .gallery-item:hover .gallery-overlay-icon {
@@ -470,7 +488,7 @@
                     galleryItem.innerHTML = `
                         <img src="${image.src}" alt="${image.alt}" loading="lazy">
                         <div class="gallery-overlay">
-                            <div class="gallery-overlay-icon">🔍</div>
+                            <div class="gallery-overlay-icon"></div>
                         </div>
                     `;
                     
