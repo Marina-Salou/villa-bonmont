@@ -562,10 +562,12 @@ figcaption {
 
 .amenity-block-title {
     font-family: var(--font-sans);
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 600;
     color: var(--color-text);
-    font-style: italic;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     margin: 0 0 var(--spacing-md) 0;
     text-align: left;
 }
@@ -837,7 +839,7 @@ figcaption {
 
 @media (min-width: 768px) {
     .video-section {
-        grid-template-columns: 0.4fr 0.6fr;
+        grid-template-columns: 0.35fr 0.65fr;
         gap: var(--spacing-xxl);
     }
 }
@@ -848,12 +850,13 @@ figcaption {
 }
 
 .video-quote p {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-style: italic;
-    font-size: 1.4rem;
-    line-height: 1.7;
-    color: var(--color-text);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
     margin: 0;
+    max-width: 500px;
 }
 
 .video-wrapper {
@@ -870,10 +873,10 @@ figcaption {
 .portal-image img {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
     display: block;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .play-button {
@@ -902,7 +905,7 @@ figcaption {
 /* INTERIOR SPACES PREVIEW */
 .interiors-preview {
     padding: var(--spacing-xxl) var(--spacing-md);
-    max-width: 1400px;
+    max-width: calc(1400px + (var(--spacing-md) * 2));
     margin: 0 auto;
 }
 

@@ -40,6 +40,8 @@ if (interiorModalBtn) {
         videoModal.setAttribute('aria-hidden', 'false');
         // Pause background scroll
         document.body.style.overflow = 'hidden';
+        // Auto-play video
+        modalVideo.play();
     });
 }
 
@@ -48,6 +50,7 @@ if (modalClose) {
         videoModal.classList.remove('active');
         videoModal.setAttribute('aria-hidden', 'true');
         modalVideo.pause();
+        modalVideo.currentTime = 0;
         // Restore background scroll
         document.body.style.overflow = '';
     });
@@ -59,6 +62,7 @@ videoModal.addEventListener('click', (e) => {
         videoModal.classList.remove('active');
         videoModal.setAttribute('aria-hidden', 'true');
         modalVideo.pause();
+        modalVideo.currentTime = 0;
         document.body.style.overflow = '';
     }
 });
@@ -69,6 +73,7 @@ document.addEventListener('keydown', (e) => {
         videoModal.classList.remove('active');
         videoModal.setAttribute('aria-hidden', 'true');
         modalVideo.pause();
+        modalVideo.currentTime = 0;
         document.body.style.overflow = '';
     }
 });
