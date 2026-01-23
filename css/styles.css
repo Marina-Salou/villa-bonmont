@@ -599,13 +599,14 @@ figcaption {
     line-height: 1.4;
 }
 
-/* Amenities Row */
 .amenities-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-md);
 }
+
+/* Igualar altura de bloques de amenities */
 
 .amenity-icon {
     text-align: center;
@@ -813,6 +814,7 @@ figcaption {
 .interior-portal {
     padding: var(--spacing-xxl) var(--spacing-md);
     background-color: var(--color-light);
+    margin-bottom: 2rem; /* Espaciado reducido para igualar separación con 'El Oasis' */
 }
 
 .portal-content {
