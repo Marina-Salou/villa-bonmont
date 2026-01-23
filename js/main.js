@@ -34,29 +34,29 @@ const interiorModalBtn = document.getElementById('interiorModal');
 const modalClose = document.getElementById('modalClose');
 const modalVideo = document.getElementById('modalVideo');
 
+const outdoorVideoModal = document.getElementById('outdoorVideoModal');
+const outdoorModalBtn = document.getElementById('outdoorModal');
+const outdoorModalClose = document.getElementById('outdoorModalClose');
+const outdoorModalVideo = document.getElementById('outdoorModalVideo');
+
+// Interior modal
 if (interiorModalBtn) {
     interiorModalBtn.addEventListener('click', () => {
         videoModal.classList.add('active');
         videoModal.setAttribute('aria-hidden', 'false');
-        // Pause background scroll
         document.body.style.overflow = 'hidden';
-        // Auto-play video
         modalVideo.play();
     });
 }
-
 if (modalClose) {
     modalClose.addEventListener('click', () => {
         videoModal.classList.remove('active');
         videoModal.setAttribute('aria-hidden', 'true');
         modalVideo.pause();
         modalVideo.currentTime = 0;
-        // Restore background scroll
         document.body.style.overflow = '';
     });
 }
-
-// Close modal when clicking outside video
 videoModal.addEventListener('click', (e) => {
     if (e.target === videoModal) {
         videoModal.classList.remove('active');
@@ -67,14 +67,51 @@ videoModal.addEventListener('click', (e) => {
     }
 });
 
-// Keyboard: ESC to close modal
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && videoModal.classList.contains('active')) {
-        videoModal.classList.remove('active');
-        videoModal.setAttribute('aria-hidden', 'true');
-        modalVideo.pause();
-        modalVideo.currentTime = 0;
+// Outdoor modal
+if (outdoorModalBtn) {
+    outdoorModalBtn.addEventListener('click', () => {
+        outdoorVideoModal.classList.add('active');
+        outdoorVideoModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        outdoorModalVideo.play();
+    });
+}
+if (outdoorModalClose) {
+    outdoorModalClose.addEventListener('click', () => {
+        outdoorVideoModal.classList.remove('active');
+        outdoorVideoModal.setAttribute('aria-hidden', 'true');
+        outdoorModalVideo.pause();
+        outdoorModalVideo.currentTime = 0;
         document.body.style.overflow = '';
+    });
+}
+outdoorVideoModal.addEventListener('click', (e) => {
+    if (e.target === outdoorVideoModal) {
+        outdoorVideoModal.classList.remove('active');
+        outdoorVideoModal.setAttribute('aria-hidden', 'true');
+        outdoorModalVideo.pause();
+        outdoorModalVideo.currentTime = 0;
+        document.body.style.overflow = '';
+    }
+});
+
+// Keyboard: ESC to close either modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        if (videoModal.classList.contains('active')) {
+            videoModal.classList.remove('active');
+            videoModal.setAttribute('aria-hidden', 'true');
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+            document.body.style.overflow = '';
+        }
+        if (outdoorVideoModal.classList.contains('active')) {
+            outdoorVideoModal.classList.remove('active');
+            outdoorVideoModal.setAttribute('aria-hidden', 'true');
+            outdoorModalVideo.pause();
+            outdoorModalVideo.currentTime = 0;
+            document.body.style.overflow = '';
+        }
     }
 });
 
