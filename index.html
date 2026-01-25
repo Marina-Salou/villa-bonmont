@@ -49,9 +49,9 @@
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Bonmont Terres Noves",
-            "addressLocality": "Castelldefels",
-            "addressRegion": "Catalunya",
-            "postalCode": "08348",
+            "addressLocality": "Mont-roig del Camp",
+            "addressRegion": "Tarragona",
+            "postalCode": "43300",
             "addressCountry": "ES"
         },
         "telephone": "+34-XXX-XXX-XXX",
@@ -80,7 +80,7 @@
             }
         ],
         "numberOfBedrooms": "6",
-        "numberOfBathroms": "5",
+        "numberOfBathrooms": "5",
         "occupancy": "14"
     }
     </script>
@@ -106,6 +106,8 @@
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#hero">Inicio</a></li>
                     <li><a href="pages/interiors.html">Interiores</a></li>
+                    <li><a href="pages/exteriors.html">Exteriores</a></li>
+                    <li><a href="pages/equipamiento-bienestar.html">Equipamiento y Bienestar</a></li>
                     <li><a href="#lifestyle">Estilo de vida</a></li>
                     <li><a href="pages/about.html">La anfitriona</a></li>
                     <li><a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71" class="cta-link">Reservar</a></li>
@@ -125,7 +127,7 @@
             </video>
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1>Un refugio exclusivo diseñado para ser vivido</h1>
+                <h1>An exclusive refuge designed to be lived</h1>
                 <a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71" class="btn btn-primary" aria-label="Consultar disponibilidad en Airbnb">Crea recuerdos</a>
                 <h2 class="hero-tagline">Haz que tu visita a la Costa Dorada sea inolvidable</h2>
             </div>
@@ -280,6 +282,9 @@
                                     <i data-feather="chevron-up"></i>
                                     <p>Alzadores</p>
                                 </div>
+                                <p class="more" style="margin-top:1rem;">
+                                    <a href="pages/equipamiento-bienestar.html" class="link-cta">Ver equipamiento y bienestar →</a>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -372,10 +377,7 @@
 
             <!-- OUTDOOR VIDEO BLOCK (copied structure) -->
             <div class="portal-content">
-                <div class="video-section">
-                    <div class="video-quote">
-                        <p style="font-family: 'Poppins', sans-serif; font-style: italic; color: #666;">Un jardín privado diseñado como un oasis donde la piscina y diferentes ambientes invitan a disfrutar del clima mediterráneo.</p>
-                    </div>
+                <div class="video-section reverse">
                     <div class="video-wrapper">
                         <figure class="portal-image">
                             <img src="images/outdoor-tour.webp" alt="Welcoming outdoor of Villa Bonmont">
@@ -387,23 +389,27 @@
                             </button>
                         </figure>
                     </div>
+                    <div class="video-quote">
+                        <p style="font-family: 'Poppins', sans-serif; font-style: italic; color: #666;">Un jardín privado diseñado como un oasis donde la piscina y diferentes ambientes invitan a disfrutar del clima mediterráneo.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Duplicado de título y línea gris -->
-            <div style="max-width: 1400px; margin: 0 auto; margin-top: 2.5rem;">
-                <h3 class="experience-subtitle">Espacios Vivos</h3>
-                <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 1.5rem 0 2.5rem 0;">
-            </div>
+            <!-- Espacios Vivos Title -->
+        <section class="interiors-preview" aria-labelledby="outdoor-spaces-title">
+            <h3 id="outdoor-spaces-title" class="experience-subtitle" style="margin-bottom: 0;">Espacios Vivos</h3>
+            <p style="font-family: 'Poppins', sans-serif; font-style: italic; color: #666; margin-top: 1.5rem; margin-bottom: 4rem; font-size: 1.1rem; line-height: 1.8; max-width: 1200px;">Siente el exterior a tu manera.</p>
+
             <div class="outdoor-gallery">
                 <article class="space-card">
                     <figure>
                         <img src="images/pool-day.webp" alt="Private swimming pool with garden during daytime">
                     </figure>
                     <div class="space-content">
-                        <h3>Piscina y relax</h3>
-                        <p>Un oasis de tranquilidad</p>
-                        <a href="#" class="link-arrow">Explorar →</a>
+                        <h3>Naturaleza y ocio</h3>
+                        <p>Un oasis íntimo</p>
+                        <a href="pages/exteriors.html#pool" class="link-arrow">Explorar →</a>
                     </div>
                 </article>
 
@@ -412,67 +418,37 @@
                         <img src="images/sobremesa.webp" alt="Private and magical atmospheres in the garden">
                     </figure>
                     <div class="space-content">
-                        <h3>Rincones con encanto</h3>
-                        <p>Momentos inolvidables</p>
-                        <a href="#" class="link-arrow">Explorar →</a>
+                        <h3>Momentos inolvidables</h3>
+                        <p>Zonas para compartir</p>
+                        <a href="pages/exteriors.html#moments" class="link-arrow">Explorar →</a>
                     </div>
                 </article>
 
-                <article class="space-card">
-                    <figure>
-                        <img src="images/garden.webp" alt="Landscaped private garden with seating areas and vegetation">
-                    </figure>
-                    <div class="space-content">
-                        <h3>Naturaleza y ocio</h3>
-                        <p>Distintas zonas llenas de vida</p>
-                        <a href="#" class="link-arrow">Explorar →</a>
-                    </div>
-                </article>
+
             </div>
         </section>
 
-        <!-- 6. COMFORT ALL YEAR -->
-        <section class="comfort" aria-labelledby="comfort-title">
-            <figure class="comfort-image">
-                <img src="images/comfort-interior.webp" alt="Warm interior with ambient lighting for year-round comfort">
-            </figure>
-            <div class="comfort-content">
-                <h2 id="comfort-title">Detalles</h2>
-                <ul class="comfort-features" role="list">
-                    <li><span class="feature-icon">✓</span> Climate control</li>
-                    <li><span class="feature-icon">✓</span> Generous interiors</li>
-                    <li><span class="feature-icon">✓</span> Private spaces</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 7. FAMILIES & GROUPS -->
-        <section class="families" aria-labelledby="families-title">
-            <div class="families-content">
-                <h2 id="families-title">Designed for Families and Groups</h2>
-                <figure class="families-image">
-                    <img src="images/gathering.webp" alt="Family gathering with dining and outdoor living spaces">
-                </figure>
-                <p class="family-stat">Up to 14 guests</p>
-            </div>
-        </section>
 
         <!-- 8. LIFESTYLE & SURROUNDINGS -->
         <section class="lifestyle" id="lifestyle" aria-labelledby="lifestyle-title">
-            <h2 id="lifestyle-title">Lifestyle & Surroundings</h2>
+            <div style="max-width: 1400px; margin: 0 auto;">
+                <h2 id="lifestyle-title" class="section-main-title">Privilegios del entorno</h2>
+                <h3 id="lifestyle-sub" class="experience-subtitle" style="margin-bottom: 0;">Explora la Costa Dorada</h3>
+                <p style="font-family: 'Poppins', sans-serif; font-style: italic; color: #666; margin-top: 1.5rem; margin-bottom: 4rem; font-size: 1.1rem; line-height: 1.8; max-width: 1200px;">En el exclusivo enclave Bonmont Terres Noves, Villa Bonmont ofrece el equilibrio perfecto entre tranquilidad y proximidad a las mejores atracciones de la Costa Dorada.</p>
+            </div>
             <div class="lifestyle-grid">
                 <article class="lifestyle-card">
                     <figure>
                         <img src="images/golf.webp" alt="Golf course near Villa Bonmont">
                     </figure>
-                    <h3>Golf & Sport</h3>
+                    <h3>Deporte y actividad</h3>
                 </article>
 
                 <article class="lifestyle-card">
                     <figure>
                         <img src="images/beach.webp" alt="Quiet beaches near Costa Dorada">
                     </figure>
-                    <h3>Quiet Beaches</h3>
+                    <h3>Playas tranquilas</h3>
                 </article>
 
                 <article class="lifestyle-card">
@@ -486,7 +462,7 @@
                     <figure>
                         <img src="images/gastronomy.webp" alt="Local gastronomy and cuisine">
                     </figure>
-                    <h3>Local Gastronomy</h3>
+                    <h3>Gastronomía local - Enología - Pubs</h3>
                 </article>
             </div>
         </section>
@@ -495,21 +471,21 @@
         <section class="location" aria-labelledby="location-title">
             <div class="location-container">
                 <div class="location-content">
-                    <h2 id="location-title">Located in Costa Dorada</h2>
-                    <p class="location-intro">Nestled in the exclusive Bonmont Terres Noves enclave, Villa Bonmont offers the perfect balance of privacy and proximity to the finest attractions of the Costa Dorada.</p>
+                    <h2 id="location-title">Ubicado en la Costa Dorada</h2>
+                    <p class="location-intro">En el exclusivo enclave Bonmont Terres Noves enclave, Villa Bonmont ofrece el equilibrio perfecto entre privacidad y proximidad a las mejores atracciones de la Costa Dorada.</p>
                     
                     <div class="location-details">
                         <div class="detail-item">
-                            <h3>Address</h3>
+                            <h3>Dirección</h3>
                             <p>Bonmont Terres Noves<br>Mont-roig del Camp<br>Tarragona, Spain</p>
                         </div>
                         <div class="detail-item">
-                            <h3>Contact</h3>
+                            <h3>Contacto</h3>
                             <p><a href="mailto:info@villabonmont.com">info@villabonmont.com</a></p>
                         </div>
                         <div class="detail-item">
-                            <h3>Distance to Barcelona</h3>
-                            <p>120 km south of Barcelona<br>~1 hour 15 minutes by car</p>
+                            <h3>Distancia a Barcelona</h3>
+                            <p>120 km al sur de Barcelona<br>~1 hora 15 minutos en coche</p>
                         </div>
                     </div>
                 </div>
@@ -528,10 +504,10 @@
                 </figure>
                 <div class="host-content">
                     <h2 id="host-title">Hosted by Idoia</h2>
-                    <p class="host-title-text">Airbnb Superhost</p>
-                    <p class="host-detail">11 years of experience</p>
-                    <p class="host-bio">Idoia is a devoted host with meticulous attention to detail. Her passion for hospitality and love of the villa ensures every guest experiences unforgettable comfort and luxury.</p>
-                    <a href="pages/about.html" class="btn btn-outline">Learn more about Idoia</a>
+                    <p class="host-title-text">Airbnb Superanfitriona</p>
+                    <p class="host-detail">11 años de experiencia</p>
+                    <p class="host-bio">Idoia es una anfitriona dedicada con una meticulosa atención al detalle. Su pasión por la hospitalidad y el amor por la villa aseguran que cada huésped experimente un confort y lujo inolvidables.</p>
+                    <a href="pages/about.html" class="btn btn-outline">Aprende más sobre Idoia</a>
                 </div>
             </article>
         </section>
@@ -566,7 +542,7 @@
         <div class="modal-content">
             <button class="modal-close" id="outdoorModalClose" aria-label="Close outdoor video">&times;</button>
             <video controls class="modal-video" id="outdoorModalVideo" preload="none">
-                <source src="images/outdoor-tour.webm" type="video/webm">
+                <source src="images/Outdoor-tour.webm" type="video/webm">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -579,27 +555,28 @@
                 <div class="footer-section">
                     <h3>Villa Bonmont Terres Noves</h3>
                     <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="pages/interiors.html">Interiors</a></li>
-                        <li><a href="#lifestyle">Lifestyle</a></li>
-                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="#hero">Inicio</a></li>
+                        <li><a href="pages/interiors.html">Interiores</a></li>
+                        <li><a href="pages/equipamiento-bienestar.html">Equipamiento y Bienestar</a></li>
+                        <li><a href="#lifestyle">Estilo de vida</a></li>
+                        <li><a href="pages/about.html">Anfritriona</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Information</h3>
+                    <h3>Información</h3>
                     <ul>
-                        <li><a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71">Reserve</a></li>
-                        <li><a href="mailto:info@villabonmont.com">Contact</a></li>
+                        <li><a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71">Reservar</a></li>
+                        <li><a href="mailto:info@villabonmont.com">Contacto</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="pages/privacy.html" rel="noopener">Privacy Policy</a></li>
-                        <li><a href="pages/cookies.html" rel="noopener">Cookie Policy</a></li>
-                        <li><a href="pages/legal.html" rel="noopener">Legal Notice</a></li>
+                        <li><a href="pages/privacy.html" rel="noopener">Política de privacidad</a></li>
+                        <li><a href="pages/cookies.html" rel="noopener">Política de cookies</a></li>
+                        <li><a href="pages/legal.html" rel="noopener">Aviso legal</a></li>
                     </ul>
                 </div>
 
@@ -622,11 +599,11 @@
     <!-- Cookie Consent Banner -->
     <div id="cookieBanner" class="cookie-banner" role="region" aria-label="Cookie consent">
         <div class="cookie-content">
-            <p>We use cookies to enhance your experience, analyze site traffic, and personalize content. Only technical cookies are loaded by default.</p>
+            <p>Utilizamos cookies para mejorar su experiencia, analizar el tráfico del sitio y personalizar el contenido. Solo se cargan cookies técnicas por defecto.</p>
             <div class="cookie-buttons">
-                <button id="cookieReject" class="btn btn-outline">Reject Non-Essential</button>
-                <button id="cookieAccept" class="btn btn-primary">Accept All</button>
-                <a href="pages/cookies.html" class="cookie-link">Cookie Settings</a>
+                <button id="cookieReject" class="btn btn-outline">Rechazar no esenciales</button>
+                <button id="cookieAccept" class="btn btn-primary">Aceptar todo</button>
+                <a href="pages/cookies.html" class="cookie-link">Configuración de cookies</a>
             </div>
         </div>
     </div>
@@ -637,6 +614,24 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
         feather.replace();
+    </script>
+    <script>
+        // Smooth scroll to anchored section when arriving with a hash or on hashchange
+        function smoothScrollToHash() {
+            const hash = location.hash;
+            if (!hash) return;
+            const id = hash.substring(1);
+            const el = document.getElementById(id);
+            if (!el) return;
+            const header = document.querySelector('.header');
+            const headerOffset = header ? header.offsetHeight + 20 : 80;
+            setTimeout(() => {
+                const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }, 50);
+        }
+        window.addEventListener('hashchange', smoothScrollToHash);
+        document.addEventListener('DOMContentLoaded', smoothScrollToHash);
     </script>
 
 </body>

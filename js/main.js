@@ -123,17 +123,7 @@ if ('IntersectionObserver' in window) {
     });
 }
 
-// Analytics placeholder (GDPR compliant - only if consent given)
-function initializeAnalytics() {
-    const cookieConsent = localStorage.getItem('villa-analytics-consent');
-    if (cookieConsent === 'accepted') {
-        // Add your analytics script here (e.g., Google Analytics)
-        console.log('Analytics initialized with user consent');
-        // Example: window.dataLayer = window.dataLayer || [];
-    }
-}
-
-document.addEventListener('DOMContentLoaded', initializeAnalytics);
+// Analytics are handled by js/cookies.js CookieManager
 
 // Smooth scroll for internal links (already done by html { scroll-behavior: smooth; })
 // but add active state highlighting
@@ -143,15 +133,21 @@ window.addEventListener('scroll', () => {
 
     document.querySelectorAll('section').forEach(section => {
         const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 200) {
+        if (window.scrollY >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
 
     nav.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#') && href.slice(1) === current) {
             link.classList.add('active');
+        } else if (href.includes('#')) {
+            const id = href.split('#')[1];
+            if (id === current) {
+                link.classList.add('active');
+            }
         }
     });
 });
@@ -189,5 +185,35 @@ if (contactForm) {
         alert('Thank you for your message. We will be in touch soon!');
     });
 }
+
+// Highlight current nav link based on URL (adds aria-current="page" and .active)
+function highlightCurrentNav() {
+    const links = document.querySelectorAll('.nav-menu a');
+    const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        try {
+            const url = new URL(href, window.location.origin);
+            const linkPath = url.pathname.replace(/\/$/, '') || '/';
+
+            if (linkPath === currentPath) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.classList.remove('active');
+                if (link.getAttribute('aria-current') === 'page') link.removeAttribute('aria-current');
+            }
+        } catch (e) {
+            // ignore malformed URLs (e.g., mailto: or anchors)
+        }
+    });
+}
+
+// Run on load and when history changes
+window.addEventListener('load', highlightCurrentNav);
+window.addEventListener('popstate', highlightCurrentNav);
 
 console.log('Villa Bonmont - Main JS loaded');

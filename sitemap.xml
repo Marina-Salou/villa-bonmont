@@ -68,4 +68,16 @@
         <priority>0.5</priority>
     </url>
 
+    <!-- Equipamiento y Bienestar -->
+    <url>
+        <loc>https://villabonmont.com/pages/equipamiento-bienestar.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://villabonmont.com/images/kitchen.webp</image:loc>
+            <image:title>Equipamiento y Bienestar - Villa Bonmont</image:title>
+        </image:image>
+    </url>
+
 </urlset>
