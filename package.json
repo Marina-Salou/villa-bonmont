@@ -1,0 +1,12 @@
+{
+  "name": "villabonmont-image-tools",
+  "version": "1.0.0",
+  "description": "Herramientas para generar variantes optimizadas de imágenes (webp/resized)",
+  "private": true,
+  "scripts": {
+    "convert-images": "node scripts/convert-images.js"
+  },
+  "dependencies": {
+    "sharp": "^0.32.0"
+  }
+}

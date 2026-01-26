@@ -216,4 +216,118 @@ function highlightCurrentNav() {
 window.addEventListener('load', highlightCurrentNav);
 window.addEventListener('popstate', highlightCurrentNav);
 
+// Simple lightbox implementation
+(function() {
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = `
+        <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+        <div class="lightbox-content" role="dialog" aria-modal="true">
+            <img src="" alt="">
+            <div class="lightbox-caption"></div>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+
+    const overlayImg = overlay.querySelector('img');
+    const overlayCaption = overlay.querySelector('.lightbox-caption');
+    const closeBtn = overlay.querySelector('.lightbox-close');
+
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    function openLightbox(galleryName, index) {
+        currentGallery = Array.from(document.querySelectorAll(`a[data-lightbox="${galleryName}"]`));
+        currentIndex = index;
+        const link = currentGallery[currentIndex];
+        overlayImg.src = link.href;
+        overlayImg.alt = link.querySelector('img')?.alt || '';
+        overlayCaption.textContent = link.dataset.caption || '';
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        overlay.classList.remove('active');
+        overlayImg.src = '';
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a[data-lightbox]');
+        if (anchor) {
+            e.preventDefault();
+            const galleryName = anchor.dataset.lightbox;
+            const all = Array.from(document.querySelectorAll(`a[data-lightbox="${galleryName}"]`));
+            const idx = all.indexOf(anchor);
+            openLightbox(galleryName, idx);
+        }
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!overlay.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') {
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            const link = currentGallery[currentIndex];
+            overlayImg.src = link.href;
+            overlayCaption.textContent = link.dataset.caption || '';
+        }
+        if (e.key === 'ArrowLeft') {
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            const link = currentGallery[currentIndex];
+            overlayImg.src = link.href;
+            overlayCaption.textContent = link.dataset.caption || '';
+        }
+    });
+})();
+
+// Comments panel toggle (accessible, minimal)
+(function initCommentsToggle(){
+    const btn = document.querySelector('.comments-toggle');
+    const panel = document.getElementById('comments-panel');
+    if (!btn || !panel) return;
+
+    function collapse(){
+        panel.classList.add('collapsed');
+        panel.classList.remove('expanded');
+        panel.setAttribute('aria-hidden','true');
+        btn.setAttribute('aria-expanded','false');
+        const shortLabel = btn.querySelector('.label-short');
+        const longLabel = btn.querySelector('.label-long');
+        if (shortLabel) shortLabel.textContent = 'Ver';
+        if (longLabel) longLabel.textContent = 'Ver comentarios';
+        panel.style.maxHeight = '0';
+    }
+    function expand(){
+        panel.classList.remove('collapsed');
+        panel.classList.add('expanded');
+        panel.setAttribute('aria-hidden','false');
+        btn.setAttribute('aria-expanded','true');
+        const shortLabel = btn.querySelector('.label-short');
+        const longLabel = btn.querySelector('.label-long');
+        if (shortLabel) shortLabel.textContent = 'Ocultar';
+        if (longLabel) longLabel.textContent = 'Ocultar comentarios';
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+
+    // initialize collapsed
+    collapse();
+
+    btn.addEventListener('click', ()=>{
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        if (expanded) collapse(); else expand();
+    });
+
+    // keep height correct when resizing
+    window.addEventListener('resize', ()=>{
+        if (panel.classList.contains('expanded')) panel.style.maxHeight = panel.scrollHeight + 'px';
+    });
+})();
+
 console.log('Villa Bonmont - Main JS loaded');
