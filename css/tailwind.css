@@ -1,0 +1,8 @@
+/* Tailwind entry (prefixed classes). Preflight is disabled to coexist with legacy css/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Example usage (all new classes must use the tw- prefix):
+   <div class="tw-bg-white tw-shadow-md tw-rounded-lg tw-p-4">...</div>
+*/
