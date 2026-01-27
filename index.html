@@ -36,6 +36,8 @@
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Tailwind utilities (generated). Uses prefix `tw-` and is designed to coexist with legacy styles -->
+    <link rel="stylesheet" href="css/tailwind.generated.css">
     
     <!-- Schema.org Structured Data - LocalBusiness y VacationRental -->
     <script type="application/ld+json">
@@ -188,53 +190,55 @@
                     </figure>
 
                     <!-- Airbnb Snapshot - placed under the image to highlight reviews -->
-                    <div class="airbnb-snapshot" aria-label="Evaluación en Airbnb">
-                        <div class="snapshot-inner">
+                    <div class="airbnb-snapshot !tw-w-full !tw-max-w-none !tw-mx-0 !tw-px-0" aria-label="Evaluación en Airbnb">
+                        <div class="snapshot-inner !tw-max-w-none !tw-w-full">
                             <h3 class="snapshot-title">Evaluación en Airbnb</h3>
 
-                            <div class="snapshot-top">
-                                <div class="snapshot-score">
+                            <div class="snapshot-top tw-grid tw-grid-cols-1 md:tw-grid-cols-4 tw-gap-8 tw-max-w-[1200px] !tw-w-full !tw-mx-0 !tw-px-0 !tw-items-end !tw-content-end">
+
+                                <div class="tw-flex tw-flex-col md:tw-justify-end tw-min-w-0 tw-flex-1">
                                     <p class="score-number">4,87</p>
                                     <p class="score-text">Puntuación huéspedes</p>
                                     <p class="reviews-count">84 evaluaciones</p>
                                 </div>
 
-                                <div class="snapshot-categories">
-                                    <ul class="category-list two-col">
-                                        <li>
-                                            <i data-feather="droplet" aria-hidden="true"></i>
-                                            <span class="cat-number">4,9</span>
-                                            <span class="cat-label">Limpieza</span>
-                                        </li>
-                                        <li>
-                                            <i data-feather="check-circle" aria-hidden="true"></i>
-                                            <span class="cat-number">4,8</span>
-                                            <span class="cat-label">Veracidad</span>
-                                        </li>
-                                        <li>
-                                            <i data-feather="key" aria-hidden="true"></i>
-                                            <span class="cat-number">4,9</span>
-                                            <span class="cat-label">Llegada</span>
-                                        </li>
-                                        <li>
-                                            <i data-feather="message-circle" aria-hidden="true"></i>
-                                            <span class="cat-number">4,8</span>
-                                            <span class="cat-label">Comunicación</span>
-                                        </li>
-                                        <li>
-                                            <i data-feather="map" aria-hidden="true"></i>
-                                            <span class="cat-number">4,7</span>
-                                            <span class="cat-label">Ubicación</span>
-                                        </li>
-                                        <li>
-                                            <i data-feather="tag" aria-hidden="true"></i>
-                                            <span class="cat-number">4,8</span>
-                                            <span class="cat-label">Calidad</span>
-                                        </li>
-                                    </ul>
+                                <div class="tw-flex tw-flex-col tw-min-w-0 tw-flex-1">
+                                    <div class="tw-flex tw-items-center">
+                                        <i data-feather="droplet" aria-hidden="true"></i>
+                                        <span class="cat-number">4,9</span>
+                                        <span class="cat-label">Limpieza</span>
+                                    </div>
+                                    <div class="tw-flex tw-items-center">
+                                        <i data-feather="key" aria-hidden="true"></i>
+                                        <span class="cat-number">4,9</span>
+                                        <span class="cat-label">Llegada</span>
+                                    </div>
+                                    <div class="tw-flex tw-items-center">
+                                        <i data-feather="map" aria-hidden="true"></i>
+                                        <span class="cat-number">4,7</span>
+                                        <span class="cat-label">Ubicación</span>
+                                    </div>
                                 </div>
 
-                                <div class="snapshot-comments">
+                                <div class="tw-flex tw-flex-col tw-min-w-0 tw-flex-1">
+                                    <div class="tw-flex tw-items-center">
+                                        <i data-feather="check-circle" aria-hidden="true"></i>
+                                        <span class="cat-number">4,8</span>
+                                        <span class="cat-label">Veracidad</span>
+                                    </div>
+                                    <div class="tw-flex tw-items-center">
+                                        <i data-feather="message-circle" aria-hidden="true"></i>
+                                        <span class="cat-number">4,8</span>
+                                        <span class="cat-label">Comunicación</span>
+                                    </div>
+                                    <div class="tw-flex tw-items-center">
+                                        <i data-feather="tag" aria-hidden="true"></i>
+                                        <span class="cat-number">4,8</span>
+                                        <span class="cat-label">Calidad</span>
+                                    </div>
+                                </div>
+
+                                <div class="tw-flex tw-flex-col tw-min-w-0 tw-flex-1">
                                     <p class="recommend-title">Recomendación del viajero</p>
                                     <p class="muted">Comentarios</p>
 
@@ -252,13 +256,16 @@
                                             <li>Decoración muy bonita</li>
                                         </ul>
                                     </div>
-                                    <div class="comments-controls">
+
+                                    <div class="comments-controls tw-mt-2">
                                         <button class="comments-toggle" aria-controls="comments-panel" aria-expanded="false">
                                             <span class="label-short">Ver</span>
                                             <span class="label-long">Ver comentarios</span>
                                         </button>
                                     </div>
+
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -267,100 +274,100 @@
                     <div class="amenities-grid">
                         <!-- Block 1: Comfort -->
                         <div class="amenity-block">
-                            <h4 class="amenity-block-title">BIENESTAR Y DESCANSO</h4>
+                            <h4 class="amenity-block-title tw-mb-2">BIENESTAR Y DESCANSO</h4>
                             <div class="amenity-block-items">
                                 <div class="amenity-item">
                                     <i data-feather="wind"></i>
-                                    <p>Aire acondicionado en toda la casa</p>
+                                    <p class="tw-leading-relaxed">Aire acondicionado en toda la casa</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="wifi"></i>
-                                    <p>WiFi de alta velocidad</p>
+                                    <p class="tw-leading-relaxed">WiFi de alta velocidad</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="package"></i>
-                                    <p>Camas king size</p>
+                                    <p class="tw-leading-relaxed">Camas king size</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="umbrella"></i>
-                                    <p>Toldos eléctricos</p>
+                                    <p class="tw-leading-relaxed">Toldos eléctricos</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="award"></i>
-                                    <p>Cocina totalmente equipada</p>
+                                    <p class="tw-leading-relaxed">Cocina totalmente equipada</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="heart"></i>
-                                    <p>Se admiten mascotas</p>
+                                    <p class="tw-leading-relaxed">Se admiten mascotas</p>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Block 2: Family Fun -->
                         <div class="amenity-block">
-                            <h4 class="amenity-block-title">OCIO EXTERIOR Y ESENCIA</h4>
+                            <h4 class="amenity-block-title tw-mb-2">OCIO EXTERIOR Y ESENCIA</h4>
                             <div class="amenity-block-items">
                                 <div class="amenity-item">
                                     <i data-feather="droplet"></i>
-                                    <p>Piscina de agua salina</p>
+                                    <p class="tw-leading-relaxed">Piscina de agua salina</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="sun"></i>
-                                    <p>Barbacoa</p>
+                                    <p class="tw-leading-relaxed">Barbacoa</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="target"></i>
-                                    <p>Juegos de mesa</p>
+                                    <p class="tw-leading-relaxed">Juegos de mesa</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="smile"></i>
-                                    <p>Zona de juegos exterior</p>
+                                    <p class="tw-leading-relaxed">Zona de juegos exterior</p>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Block 3: Peace of Mind -->
                         <div class="amenity-block">
-                            <h4 class="amenity-block-title">SEGURIDAD Y PRIVACIDAD</h4>
+                            <h4 class="amenity-block-title tw-mb-2">SEGURIDAD Y PRIVACIDAD</h4>
                             <div class="amenity-block-items">
                                 <div class="amenity-item">
                                     <i data-feather="shield"></i>
-                                    <p>Seguridad 24/7</p>
+                                    <p class="tw-leading-relaxed">Seguridad 24/7</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="truck"></i>
-                                    <p>Aparcamiento privado</p>
+                                    <p class="tw-leading-relaxed">Aparcamiento privado</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="lock"></i>
-                                    <p>Parcela privada</p>
+                                    <p class="tw-leading-relaxed">Parcela privada</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="user-check"></i>
-                                    <p>Acessible para sillas de ruedas</p>
+                                    <p class="tw-leading-relaxed">Accesible para sillas de ruedas</p>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Block 4: Travel Light -->
                         <div class="amenity-block">
-                            <h4 class="amenity-block-title">SERVICIOS DE CORTESÍA</h4>
+                            <h4 class="amenity-block-title tw-mb-2">SERVICIOS DE CORTESÍA</h4>
                             <div class="amenity-block-items">
                                 <div class="amenity-item">
                                     <i data-feather="anchor"></i>
-                                    <p>Toallas de playa y piscina</p>
+                                    <p class="tw-leading-relaxed">Toallas de playa y piscina</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="circle"></i>
-                                    <p>Cunas</p>
+                                    <p class="tw-leading-relaxed">Cunas</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="grid"></i>
-                                    <p>Tronas</p>
+                                    <p class="tw-leading-relaxed">Tronas</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="chevron-up"></i>
-                                    <p>Alzadores</p>
+                                    <p class="tw-leading-relaxed">Alzadores</p>
                                 </div>
                                 <p class="more" style="margin-top:1rem;">
                                     <a href="pages/equipamiento-bienestar.html" class="link-arrow">Ver más equipamiento y bienestar →</a>

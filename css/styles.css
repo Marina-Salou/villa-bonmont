@@ -527,13 +527,29 @@ figcaption {
     margin: 1.25rem 0 2rem;
     padding: 1rem 0;
     border-radius: 8px;
-    background: linear-gradient(180deg, rgba(248,248,247,0.6), #fff);
+    background: none;
     /* background container only; internal layout is handled by .snapshot-top / .navbar-container */
     width: 100%;
 }
+
+
 .airbnb-snapshot .snapshot-inner { max-width: 1400px; margin: 0 auto; padding: 0; box-sizing: border-box; }
 .airbnb-snapshot .snapshot-title { margin: 0 0 .5rem 0; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; color: var(--color-text); letter-spacing: 1.5px; text-transform: uppercase; }
 .airbnb-snapshot .snapshot-top { display: grid; grid-template-columns: minmax(120px,200px) 1.6fr 1fr; gap: 0.6rem 3.6rem; align-items:start; }
+
+/* Ensure last paragraph in each column has no bottom margin to avoid visual gaps */
+.airbnb-snapshot .snapshot-top > * p:last-child { margin-bottom: 0; }
+
+/* Local override: enforce 4 equal columns at md+ and avoid overflow by allowing children to shrink */
+@media (min-width: 48rem) {
+    .airbnb-snapshot .snapshot-top.tw-grid.md\:tw-grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        align-items: end !important; /* force baseline alignment for all columns */
+    }
+}
+
+/* Ensure direct children can shrink to avoid overflow */
+.airbnb-snapshot .snapshot-top > * { min-width: 0; box-sizing: border-box; }
 .score-number { font-family: var(--font-sans); font-size: 2.5rem; font-weight: 600; color: var(--color-secondary); margin: 0; line-height: 1; }
 .snapshot-score { padding-right: 3rem; }
 .snapshot-comments { justify-self: stretch; text-align: left; align-self: start; }

@@ -27,3 +27,9 @@ npm-debug.log*
 # Environment files (if you add any in the future)
 .env
 .env.local
+
+# Node modules
+node_modules/
+
+# Generated Tailwind (optional - included in commit by request)
+# css/tailwind.generated.css

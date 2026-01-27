@@ -4,11 +4,13 @@
 
 module.exports = {
   prefix: 'tw-',
-  content: [
-    './*.html',
-    './pages/**/*.html',
-    './js/**/*.js'
-  ],
+  content: {
+    files: [
+      './*.html',
+      './pages/**/*.html',
+      './js/**/*.js'
+    ]
+  },
   corePlugins: {
     preflight: false
   },

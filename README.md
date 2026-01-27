@@ -151,6 +151,15 @@ npx http-server
 
 Then visit: `http://localhost:8000`
 
+Tailwind CSS (optional build step):
+
+- Install dev dependencies: `npm install --save-dev tailwindcss postcss autoprefixer` (or run `npm install` if `devDependencies` already in `package.json`).
+- Entry file: `css/tailwind.css` (already present). Generated output: `css/tailwind.generated.css`.
+- Build once: `npm run build:css`.
+- Watch during development: `npm run watch:css`.
+
+Notes: Tailwind is configured with prefix `tw-` and **Preflight is disabled** so it coexists safely with the existing `css/styles.css`. Include `css/tailwind.generated.css` in the head after `css/styles.css` to apply new utilities.
+
 ### 3. **Deployment to Production**
 
 #### Prerequisites:
