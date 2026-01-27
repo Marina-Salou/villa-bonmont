@@ -675,6 +675,16 @@ figcaption {
         grid-template-columns: repeat(4, 1fr);
         gap: var(--spacing-xl);
     }
+
+    /* TODO (temporary override) — ACTION REQUIRED
+       This local override exists to ensure the Tailwind utilities applied to the amenities grid
+       take effect while legacy CSS is still present. Remove this block when the legacy
+       `.amenities-grid` rules are removed and Tailwind is authoritative.
+       See: .github/ISSUES/0001-remove-legacy-amenities-css.md for plan & checklist. */
+    .amenities-grid.tw-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 2rem !important; /* matches tw-gap-8 */
+    }
 }
 
 .amenity-block {
@@ -715,10 +725,9 @@ figcaption {
     text-transform: uppercase;
     margin: 0 0 0.35rem 0;
     line-height: 1.4;
-}
-.recommend-title strong { font-weight: inherit; color: inherit; text-transform: none; }
     text-align: left;
 }
+.recommend-title strong { font-weight: inherit; color: inherit; text-transform: none; }
 
 .amenity-block-items {
     display: flex;
