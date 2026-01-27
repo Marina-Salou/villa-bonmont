@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Inventario visual de equipamiento y soluciones de bienestar disponibles en Villa Bonmont: electrodomésticos, menaje, equipamiento infantil y artículos para mascotas.">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="https://villabonmont.com/pages/equipamiento-bienestar.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+    <!-- Legacy CSS -->
     <link rel="stylesheet" href="../css/styles.css">
+    <!-- Tailwind utilities (generated). Uses prefix `tw-`. Run `node scripts/build-tailwind.js` after HTML changes. -->
+    <link rel="stylesheet" href="../css/tailwind.generated.css">
     <title>Equipamiento y Bienestar | Villa Bonmont</title>
 </head>
 <body>
@@ -40,213 +45,213 @@
 
     <main id="main" role="main">
         <section class="equip-grid">
-            <h2 style="text-align:center;">Equipamiento y Bienestar</h2>
-            <p style="text-align:center; color:#666; max-width:900px; margin:0 auto 0.6rem;">Un inventario visual del equipamiento y soluciones de bienestar que pongo a disposición de mis huéspedes.</p>
+            <h2 class="tw-text-center tw-text-[2.5rem] tw-font-light">Equipamiento y Bienestar</h2>
+            <p class="tw-text-center tw-text-[#666] tw-max-w-[900px] tw-mx-auto tw-mb-2">Un inventario visual del equipamiento y soluciones de bienestar que pongo a disposición de mis huéspedes.</p>
 
             <!-- Universo Infantil (Bebés y Niños) -->
-            <details class="equip-section">
-                <summary id="infantil-title">Universo Infantil (Bebés y Niños)</summary>
-                <div class="equip-list">
-                    <div class="amenity-item"><i data-feather="home" aria-hidden="true"></i><p>Cunas completas (132 cm x 71 cm) bajo petición</p></div>
-                    <div class="amenity-item"><i data-feather="move" aria-hidden="true"></i><p>Parque (columpio y cama elástica con seguridad)</p></div>
-                    <div class="amenity-item"><i data-feather="file-text" aria-hidden="true"></i><p>Sábanas de algodón específicas para cuna</p></div>
-                    <div class="amenity-item"><i data-feather="square" aria-hidden="true"></i><p>Almohadas infantiles y mantas</p></div>
-                    <div class="amenity-item"><i data-feather="repeat" aria-hidden="true"></i><p>Edredones de cuna</p></div>
-                    <div class="amenity-item"><i data-feather="edit-3" aria-hidden="true"></i><p>Mesa cambiador de pañales</p></div>
-                    <div class="amenity-item"><i data-feather="grid" aria-hidden="true"></i><p>Tronas y alzadores de silla</p></div>
-                    <div class="amenity-item"><i data-feather="activity" aria-hidden="true"></i><p>Vajilla, vasos y cubertería infantil (material seguro/plástico)</p></div>
-                    <div class="amenity-item"><i data-feather="award" aria-hidden="true"></i><p>Baberos de cortesía</p></div>
-                    <div class="amenity-item"><i data-feather="droplet" aria-hidden="true"></i><p>Bañera para bebés</p></div>
-                    <div class="amenity-item"><i data-feather="shield" aria-hidden="true"></i><p>Reductor de WC y taburete alzador para lavabo</p></div>
-                    <div class="amenity-item"><i data-feather="book" aria-hidden="true"></i><p>Libros y juguetes para edades (0–2 años,  2–5 años, 5–10 años)</p></div>
-                    <div class="amenity-item"><i data-feather="book-open" aria-hidden="true"></i><p>Libros y juguetes para mayores de 10 años</p></div>
-                    <div class="amenity-item"><i data-feather="zap" aria-hidden="true"></i><p>Protectores de enchufes</p></div>
-                    <div class="amenity-item"><i data-feather="tv" aria-hidden="true"></i><p>Monitor de bebé y kit de biberones (bajo disponibilidad)</p></div>
-                    <div class="amenity-item"><i data-feather="user" aria-hidden="true"></i><p>Recomendaciones de canguros (babysitters) locales</p></div>
+            <details class="equip-section tw-mb-6">
+                <summary id="infantil-title" class="tw-flex tw-items-center tw-justify-between tw-py-3 tw-font-semibold tw-text-lg">Universo Infantil (Bebés y Niños) <span class="indicator tw-ml-3 tw-transition-transform tw-duration-150 tw-inline-block" aria-hidden="true">▾</span></summary>
+                <div class="equip-list tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-3 tw-gap-y-4">
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="home" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Cunas completas (132 cm x 71 cm) bajo petición</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="move" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Parque (columpio y cama elástica con seguridad)</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="file-text" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Sábanas de algodón específicas para cuna</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="square" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Almohadas infantiles y mantas</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="repeat" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Edredones de cuna</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="edit-3" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Mesa cambiador de pañales</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="grid" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Tronas y alzadores de silla</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="activity" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Vajilla, vasos y cubertería infantil (material seguro/plástico)</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="award" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Baberos de cortesía</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="droplet" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Bañera para bebés</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="shield" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Reductor de WC y taburete alzador para lavabo</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="book" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Libros y juguetes para edades (0–2 años,  2–5 años, 5–10 años)</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="book-open" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Libros y juguetes para mayores de 10 años</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="zap" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Protectores de enchufes</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="tv" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Monitor de bebé y kit de biberones (bajo disponibilidad)</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="user" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Recomendaciones de canguros (babysitters) locales</p></div>
                 </div>
             </details>
 
             <!-- Cocina y Almacenaje -->
-            <details class="equip-section">
-                <summary id="cocina-title">
-                    <span class="summary-title">Cocina y Almacenaje</span>
-                    <div class="summary-thumbs" aria-hidden="false">
-                        <a href="../images/equipamiento/mesa comedor-1.webp" data-lightbox="cocina" data-caption="Mesa de comedor">
-                            <img class="summary-thumb" src="../images/equipamiento/mesa comedor-1.webp" alt="Mesa de comedor" loading="lazy" width="240" height="160">
+            <details class="equip-section tw-mb-6">
+                <summary id="cocina-title" class="tw-flex tw-items-center tw-justify-between tw-py-3 tw-font-semibold tw-text-lg">
+                    <span class="summary-title">Cocina y Almacenaje <span class="indicator tw-ml-3 tw-transition-transform tw-duration-150 tw-inline-block" aria-hidden="true">▾</span></span>
+                    <div class="summary-thumbs tw-flex tw-items-center tw-gap-3" aria-hidden="false">
+                        <a href="../images/equipamiento/mesa comedor-1.webp" data-lightbox="cocina" data-caption="Mesa de comedor" class="tw-block">
+                            <img class="summary-thumb tw-w-[240px] tw-h-[160px] tw-object-cover" src="../images/equipamiento/mesa comedor-1.webp" alt="Mesa de comedor" loading="lazy" width="240" height="160">
                         </a>
-                        <a href="../images/equipamiento/mesa comerdor-2.webp" data-lightbox="cocina" data-caption="Mesa de comedor">
-                            <img class="summary-thumb" src="../images/equipamiento/mesa comerdor-2.webp" alt="Mesa de comedor" loading="lazy" width="240" height="160">
+                        <a href="../images/equipamiento/mesa comerdor-2.webp" data-lightbox="cocina" data-caption="Mesa de comedor" class="tw-block">
+                            <img class="summary-thumb tw-w-[240px] tw-h-[160px] tw-object-cover" src="../images/equipamiento/mesa comerdor-2.webp" alt="Mesa de comedor" loading="lazy" width="240" height="160">
                         </a>
                     </div>
                 </summary>
-                <div class="equip-list">
-                    <div class="amenity-item"><i data-feather="coffee" aria-hidden="true"></i><p>Cafetera Nespresso de cápsulas</p></div>
-                    <div class="amenity-item"><i data-feather="coffee" aria-hidden="true"></i><p>Cafetera italiana tradicional</p></div>
-                    <div class="amenity-item"><i data-feather="coffee" aria-hidden="true"></i><p>Cafetera americana de goteo</p></div>
-                    <div class="amenity-item"><i data-feather="box" aria-hidden="true"></i><p>2 neveras de gran capacidad</p></div>
-                    <div class="amenity-item"><i data-feather="box" aria-hidden="true"></i><p>1 congelador vertical de cuerpo entero</p></div>
-                    <div class="amenity-item"><i data-feather="refresh-ccw" aria-hidden="true"></i><p>Lavavajillas</p></div>
-                    <div class="amenity-item"><i data-feather="server" aria-hidden="true"></i><p>Horno multifunción y microondas</p></div>
-                    <div class="amenity-item"><i data-feather="tool" aria-hidden="true"></i><p>Cortafiambres profesional</p></div>
-                    <div class="amenity-item"><i data-feather="battery" aria-hidden="true"></i><p>Batidora de mano</p></div>
-                    <div class="amenity-item"><i data-feather="chevrons-right" aria-hidden="true"></i><p>Tostadora</p></div>
-                    <div class="amenity-item"><i data-feather="zap" aria-hidden="true"></i><p>Hervidor de agua</p></div>
-                    <div class="amenity-item"><i data-feather="coffee" aria-hidden="true"></i><p>Panificadora</p></div>
-                    <div class="amenity-item"><i data-feather="package" aria-hidden="true"></i><p>Batería de cocina completa y utensilios de cocina</p></div>
-                    <div class="amenity-item"><i data-feather="slash" aria-hidden="true"></i><p>Cuchillería de calidad y tablas de corte</p></div>
-                    <div class="amenity-item"><i data-feather="coffee" aria-hidden="true"></i><p>Vajilla y cristalería completa</p></div>
-                    <div class="amenity-item"><i data-feather="box" aria-hidden="true"></i><p>Fuentes de horno y ensaladeras</p></div>
-                    <div class="amenity-item"><i data-feather="droplet" aria-hidden="true"></i><p>Aceite, sal y pimienta de cortesía</p></div>
-                    <div class="amenity-item"><i data-feather="coffee" aria-hidden="true"></i><p>Mesa de comedor con capacidad para todos los huéspedes</p></div>
+                <div class="equip-list tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-3 tw-gap-y-4">
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="coffee" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Cafetera Nespresso de cápsulas</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="coffee" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Cafetera italiana tradicional</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="coffee" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Cafetera americana de goteo</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="box" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">2 neveras de gran capacidad</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="box" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">1 congelador vertical de cuerpo entero</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="refresh-ccw" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Lavavajillas</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="server" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Horno multifunción y microondas</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="tool" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Cortafiambres profesional</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="battery" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Batidora de mano</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="chevrons-right" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Tostadora</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="zap" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Hervidor de agua</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="coffee" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Panificadora</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="package" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Batería de cocina completa y utensilios de cocina</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="slash" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Cuchillería de calidad y tablas de corte</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="coffee" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Vajilla y cristalería completa</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="box" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Fuentes de horno y ensaladeras</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="droplet" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Aceite, sal y pimienta de cortesía</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="coffee" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Mesa de comedor con capacidad para todos los huéspedes</p></div>
                 </div>
             </details>
 
             <!-- Dormitorios y Baño -->
-            <details class="equip-section">
-                <summary id="dormitorios-title">Dormitorios y Baño</summary>
-                <div class="equip-list">
-                    <div class="amenity-item"><i data-feather="box" aria-hidden="true"></i><p>Juegos de sábanas para todas las camas</p></div>
-                    <div class="amenity-item"><i data-feather="square" aria-hidden="true"></i><p>Almohadas de varias firmezas</p></div>
-                    <div class="amenity-item"><i data-feather="feather" aria-hidden="true"></i><p>Nórdicos, colchas y mantas extra</p></div>
-                    <div class="amenity-item"><i data-feather="bathtub" aria-hidden="true"></i><p>Bañera, bidé y agua caliente</p></div>
-                    <div class="amenity-item"><i data-feather="life-buoy" aria-hidden="true"></i><p>Dispensadores de jabón de manos en cada baño</p></div>
-                    <div class="amenity-item"><i data-feather="droplet" aria-hidden="true"></i><p>Champú, acondicionador y gel de ducha en todos los baños</p></div>
-                    <div class="amenity-item"><i data-feather="scissors" aria-hidden="true"></i><p>Toallas de ducha y toallas de manos</p></div>
-                    <div class="amenity-item"><i data-feather="grid" aria-hidden="true"></i><p>Alfombrillas de baño</p></div>
-                    <div class="amenity-item"><i data-feather="hash" aria-hidden="true"></i><p>Secador de pelo y espejo de aumento</p></div>
+            <details class="equip-section tw-mb-6">
+                <summary id="dormitorios-title" class="tw-flex tw-items-center tw-justify-between tw-py-3 tw-font-semibold tw-text-lg">Dormitorios y Baño <span class="indicator tw-ml-3 tw-transition-transform tw-duration-150 tw-inline-block" aria-hidden="true">▾</span></summary>
+                <div class="equip-list tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-3 tw-gap-y-4">
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="box" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Juegos de sábanas para todas las camas</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="square" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Almohadas de varias firmezas</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="feather" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Nórdicos, colchas y mantas extra</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="bathtub" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Bañera, bidé y agua caliente</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="life-buoy" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Dispensadores de jabón de manos en cada baño</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="droplet" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Champú, acondicionador y gel de ducha en todos los baños</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="scissors" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Toallas de ducha y toallas de manos</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="grid" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Alfombrillas de baño</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="hash" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Secador de pelo y espejo de aumento</p></div>
                 </div>
             </details>
 
             <!-- Lavandería y Logística -->
-            <details class="equip-section">
-                <summary id="lavado-title">
-                    <span class="summary-title">Lavandería y Logística</span>
-                    <div class="summary-thumbs" aria-hidden="false">
-                        <a href="../images/equipamiento/lavanderia.webp" data-lightbox="lavanderia" data-caption="Zona de lavandería">
-                            <img class="summary-thumb" src="../images/equipamiento/lavanderia.webp" alt="Zona de lavandería" loading="lazy" width="240" height="160">
+            <details class="equip-section tw-mb-6">
+                <summary id="lavado-title" class="tw-flex tw-items-center tw-justify-between tw-py-3 tw-font-semibold tw-text-lg">
+                    <span class="summary-title">Lavandería y Logística <span class="indicator tw-ml-3 tw-transition-transform tw-duration-150 tw-inline-block" aria-hidden="true">▾</span></span>
+                    <div class="summary-thumbs tw-flex tw-items-center tw-gap-3" aria-hidden="false">
+                        <a href="../images/equipamiento/lavanderia.webp" data-lightbox="lavanderia" data-caption="Zona de lavandería" class="tw-block">
+                            <img class="summary-thumb tw-w-[240px] tw-h-[160px] tw-object-cover" src="../images/equipamiento/lavanderia.webp" alt="Zona de lavandería" loading="lazy" width="240" height="160">
                         </a>
                     </div>
                 </summary>
-                <div class="equip-list">
-                    <div class="amenity-item"><i data-feather="git-merge" aria-hidden="true"></i><p>Lavadora de uso gratuito</p></div>
-                    <div class="amenity-item"><i data-feather="cpu" aria-hidden="true"></i><p>Secadora independiente</p></div>
-                    <div class="amenity-item"><i data-feather="corner-up-left" aria-hidden="true"></i><p>Tendedero para ropa</p></div>
-                    <div class="amenity-item"><i data-feather="zap" aria-hidden="true"></i><p>Plancha de vapor y tabla de planchar</p></div>
-                    <div class="amenity-item"><i data-feather="trash-2" aria-hidden="true"></i><p>Aspirador, escoba y fregona</p></div>
-                    <div class="amenity-item"><i data-feather="tool" aria-hidden="true"></i><p>Kit básico de productos de limpieza</p></div>
+                <div class="equip-list tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-3 tw-gap-y-4">
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="git-merge" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Lavadora de uso gratuito</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="cpu" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Secadora independiente</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="corner-up-left" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Tendedero para ropa</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="zap" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Plancha de vapor y tabla de planchar</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="trash-2" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Aspirador, escoba y fregona</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="tool" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Kit básico de productos de limpieza</p></div>
                 </div>
             </details>
 
             <!-- Ocio y Espacio Exterior -->
-            <details class="equip-section">
-                <summary id="ocio-title">
-                    <span class="summary-title">Ocio y Espacio Exterior</span>
-                    <div class="summary-thumbs" aria-hidden="false">
-                        <a href="../images/equipamiento/garaje1.webp" data-lightbox="exterior" data-caption="Entrada / Aparcamiento">
-                            <img class="summary-thumb" src="../images/equipamiento/garaje1.webp" alt="Entrada y aparcamiento" loading="lazy" width="240" height="160">
+            <details class="equip-section tw-mb-6">
+                <summary id="ocio-title" class="tw-flex tw-items-center tw-justify-between tw-py-3 tw-font-semibold tw-text-lg">
+                    <span class="summary-title">Ocio y Espacio Exterior <span class="indicator tw-ml-3 tw-transition-transform tw-duration-150 tw-inline-block" aria-hidden="true">▾</span></span>
+                    <div class="summary-thumbs tw-flex tw-items-center tw-gap-3" aria-hidden="false">
+                        <a href="../images/equipamiento/garaje1.webp" data-lightbox="exterior" data-caption="Entrada / Aparcamiento" class="tw-block">
+                            <img class="summary-thumb tw-w-[240px] tw-h-[160px] tw-object-cover" src="../images/equipamiento/garaje1.webp" alt="Entrada y aparcamiento" loading="lazy" width="240" height="160">
                         </a>
-                        <a href="../images/equipamiento/garaje2.webp" data-lightbox="exterior" data-caption="Entrada / Aparcamiento">
-                            <img class="summary-thumb" src="../images/equipamiento/garaje2.webp" alt="Entrada y aparcamiento" loading="lazy" width="240" height="160">
+                        <a href="../images/equipamiento/garaje2.webp" data-lightbox="exterior" data-caption="Entrada / Aparcamiento" class="tw-block">
+                            <img class="summary-thumb tw-w-[240px] tw-h-[160px] tw-object-cover" src="../images/equipamiento/garaje2.webp" alt="Entrada y aparcamiento" loading="lazy" width="240" height="160">
                         </a>
                     </div>
                 </summary>
-                <div class="equip-list">
-                    <div class="amenity-item"><i data-feather="home" aria-hidden="true"></i><p>Jardín privado con mobiliario completo</p></div>
-                    <div class="amenity-item"><i data-feather="square" aria-hidden="true"></i><p>Terraza privada en habitación master</p></div>
-                    <div class="amenity-item"><i data-feather="sun" aria-hidden="true"></i><p>Tumbonas ergonómicas disponibles para todos los huéspedes</p></div>
-                    <div class="amenity-item"><i data-feather="coffee" aria-hidden="true"></i><p>Zona de relax exterior</p></div>
-                    <div class="amenity-item"><i data-feather="award" aria-hidden="true"></i><p>Zona de barbacoa con parrilla y carbón</p></div>
-                    <div class="amenity-item"><i data-feather="zap" aria-hidden="true"></i><p>Fregadero exterior en zona barbacoa</p></div>
-                    <div class="amenity-item"><i data-feather="feather" aria-hidden="true"></i><p>Horno de leña tradicional en zona barbacoa</p></div>
-                    <div class="amenity-item"><i data-feather="droplet" aria-hidden="true"></i><p>Piscina con juegos acuáticos y flotadores</p></div>
-                    <div class="amenity-item"><i data-feather="droplet" aria-hidden="true"></i><p>Toallas específicas para piscina</p></div>
-                    <div class="amenity-item"><i data-feather="volume-2" aria-hidden="true"></i><p>Sistema de sonido</p></div>
-                    <div class="amenity-item"><i data-feather="tv" aria-hidden="true"></i><p>Smart TV y juegos de mesa</p></div>
-                    <div class="amenity-item"><i data-feather="book" aria-hidden="true"></i><p>Libros de lectura para adultos</p></div>
-                    <div class="amenity-item"><i data-feather="award" aria-hidden="true"></i><p>Comedero y bebedero de acero inoxidable para mascotas</p></div>
-                    <div class="amenity-item"><i data-feather="repeat" aria-hidden="true"></i><p>Mantas y toallas para mascotas bajo petición</p></div>
-                    <div class="amenity-item"><i data-feather="credit-card" aria-hidden="true"></i><p>Aparcamiento gratuito en las instalaciones</p></div>
+                <div class="equip-list tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-3 tw-gap-y-4">
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="home" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Jardín privado con mobiliario completo</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="square" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Terraza privada en habitación master</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="sun" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Tumbonas ergonómicas disponibles para todos los huéspedes</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="coffee" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Zona de relax exterior</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="award" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Zona de barbacoa con parrilla y carbón</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="zap" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Fregadero exterior en zona barbacoa</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="feather" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Horno de leña tradicional en zona barbacoa</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="droplet" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Piscina con juegos acuáticos y flotadores</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="droplet" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Toallas específicas para piscina</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="volume-2" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Sistema de sonido</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="tv" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Smart TV y juegos de mesa</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="book" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Libros de lectura para adultos</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="award" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Comedero y bebedero de acero inoxidable para mascotas</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="repeat" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Mantas y toallas para mascotas bajo petición</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="credit-card" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Aparcamiento gratuito en las instalaciones</p></div>
                 </div>
             </details>
 
             <!-- Internet y Oficina -->
-            <details class="equip-section">
-                <summary id="internet-title">
-                    <span class="summary-title">Internet y Oficina</span>
-                    <div class="summary-thumbs" aria-hidden="false">
-                        <a href="../images/equipamiento/despacho-1.webp" data-lightbox="oficina" data-caption="Despacho / Zona de trabajo">
-                            <img class="summary-thumb" src="../images/equipamiento/despacho-1.webp" alt="Despacho" loading="lazy" width="240" height="160">
+            <details class="equip-section tw-mb-6">
+                <summary id="internet-title" class="tw-flex tw-items-center tw-justify-between tw-py-3 tw-font-semibold tw-text-lg">
+                    <span class="summary-title">Internet y Oficina <span class="indicator tw-ml-3 tw-transition-transform tw-duration-150 tw-inline-block" aria-hidden="true">▾</span></span>
+                    <div class="summary-thumbs tw-flex tw-items-center tw-gap-3" aria-hidden="false">
+                        <a href="../images/equipamiento/despacho-1.webp" data-lightbox="oficina" data-caption="Despacho / Zona de trabajo" class="tw-block">
+                            <img class="summary-thumb tw-w-[240px] tw-h-[160px] tw-object-cover" src="../images/equipamiento/despacho-1.webp" alt="Despacho" loading="lazy" width="240" height="160">
                         </a>
-                        <a href="../images/equipamiento/despacho-2.webp" data-lightbox="oficina" data-caption="Despacho / Zona de trabajo">
-                            <img class="summary-thumb" src="../images/equipamiento/despacho-2.webp" alt="Despacho" loading="lazy" width="240" height="160">
+                        <a href="../images/equipamiento/despacho-2.webp" data-lightbox="oficina" data-caption="Despacho / Zona de trabajo" class="tw-block">
+                            <img class="summary-thumb tw-w-[240px] tw-h-[160px] tw-object-cover" src="../images/equipamiento/despacho-2.webp" alt="Despacho" loading="lazy" width="240" height="160">
                         </a>
                     </div>
                 </summary>
-                <div class="equip-list">
-                    <div class="amenity-item"><i data-feather="wifi" aria-hidden="true"></i><p>Wifi de alta velocidad en toda la casa</p></div>
-                    <div class="amenity-item"><i data-feather="briefcase" aria-hidden="true"></i><p>Zona de trabajo con silla ergonómica en área común</p></div>
-                    <div class="amenity-item"><i data-feather="wifi" aria-hidden="true"></i><p>Wifi móvil disponible</p></div>
+                <div class="equip-list tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-3 tw-gap-y-4">
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="wifi" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Wifi de alta velocidad en toda la casa</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="briefcase" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Zona de trabajo con silla ergonómica en área común</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="wifi" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Wifi móvil disponible</p></div>
                 </div>
             </details>
 
             <!-- Seguridad y Emergencias -->
-            <details class="equip-section">
-                <summary id="seguridad-title">Seguridad y Emergencias</summary>
-                <div class="equip-list">
-                    <div class="amenity-item"><i data-feather="zap" aria-hidden="true"></i><p>Cerillas y velas para imprevistos</p></div>
-                    <div class="amenity-item"><i data-feather="alert-circle" aria-hidden="true"></i><p>Luces de emergencia</p></div>
-                    <div class="amenity-item"><i data-feather="heart" aria-hidden="true"></i><p>Botiquín de primeros auxilios</p></div>
-                    <div class="amenity-item"><i data-feather="shield" aria-hidden="true"></i><p>Extintor</p></div>
-                    <div class="amenity-item"><i data-feather="scissors" aria-hidden="true"></i><p>Kit básico de costura</p></div>
-                    <div class="amenity-item"><i data-feather="alert-triangle" aria-hidden="true"></i><p>Detector de humo y detector de monóxido de carbono</p></div>
+            <details class="equip-section tw-mb-6">
+                <summary id="seguridad-title" class="tw-flex tw-items-center tw-justify-between tw-py-3 tw-font-semibold tw-text-lg">Seguridad y Emergencias <span class="indicator tw-ml-3 tw-transition-transform tw-duration-150 tw-inline-block" aria-hidden="true">▾</span></summary>
+                <div class="equip-list tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-3 tw-gap-y-4">
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="zap" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Cerillas y velas para imprevistos</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="alert-circle" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Luces de emergencia</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="heart" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Botiquín de primeros auxilios</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="shield" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Extintor</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="scissors" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Kit básico de costura</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="alert-triangle" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Detector de humo y detector de monóxido de carbono</p></div>
                 </div>
             </details>
 
             <!-- Otros servicios y Políticas -->
-            <details class="equip-section">
-                <summary id="servicios-title">Otros servicios y Políticas</summary>
-                <div class="equip-list">
-                    <div class="amenity-item"><i data-feather="activity" aria-hidden="true"></i><p>Admite mascotas</p></div>
-                    <div class="amenity-item"><i data-feather="briefcase" aria-hidden="true"></i><p>Permite dejar el equipaje antes o después de la estancia</p></div>
-                    <div class="amenity-item"><i data-feather="smile" aria-hidden="true"></i><p>Apto para fumadores en áreas exteriores indicadas</p></div>
-                    <div class="amenity-item"><i data-feather="clock" aria-hidden="true"></i><p>Estancias largas permitidas (28 días o más)</p></div>
-                    <div class="amenity-item"><i data-feather="repeat" aria-hidden="true"></i><p>Servicio de limpieza disponible durante la estancia</p></div>
-                    <div class="amenity-item"><i data-feather="user-check" aria-hidden="true"></i><p>Recepción personalizada por parte del anfitrión</p></div>
+            <details class="equip-section tw-mb-6">
+                <summary id="servicios-title" class="tw-flex tw-items-center tw-justify-between tw-py-3 tw-font-semibold tw-text-lg">Otros servicios y Políticas <span class="indicator tw-ml-3 tw-transition-transform tw-duration-150 tw-inline-block" aria-hidden="true">▾</span></summary>
+                <div class="equip-list tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-3 tw-gap-y-4">
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="activity" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Admite mascotas</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="briefcase" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Permite dejar el equipaje antes o después de la estancia</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="smile" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Apto para fumadores en áreas exteriores indicadas</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="clock" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Estancias largas permitidas (28 días o más)</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="repeat" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Servicio de limpieza disponible durante la estancia</p></div>
+                    <div class="amenity-item tw-flex tw-items-start tw-gap-3"><i data-feather="user-check" aria-hidden="true" class="tw-w-5 tw-h-5 tw-flex-none tw-text-[var(--color-secondary)]"></i><p class="tw-m-0 tw-leading-7">Recepción personalizada por parte del anfitrión</p></div>
                 </div>
             </details>
         </section>
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <footer class="footer tw-bg-white tw-border-t tw-border-gray-100 tw-pt-8 tw-pb-8" role="contentinfo">
         <nav class="footer-nav" role="navigation" aria-label="Footer navigation">
-            <div class="footer-content">
+            <div class="footer-content tw-max-w-[1200px] tw-mx-auto tw-px-4 tw-grid tw-grid-cols-1 md:tw-grid-cols-4 tw-gap-6">
                 <div class="footer-section">
-                    <h3>Villa Bonmont</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="./interiors.html">Interiores</a></li>
-                        <li><a href="./equipamiento-bienestar.html">Equipamiento y Bienestar</a></li>
-                        <li><a href="../index.html#lifestyle">Estilo de vida</a></li>
-                        <li><a href="./about.html">La anfitriona</a></li>
+                    <h3 class="tw-font-semibold tw-mb-2">Villa Bonmont</h3>
+                    <ul class="tw-space-y-2">
+                        <li><a href="../index.html" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Home</a></li>
+                        <li><a href="./interiors.html" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Interiores</a></li>
+                        <li><a href="./equipamiento-bienestar.html" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Equipamiento y Bienestar</a></li>
+                        <li><a href="../index.html#lifestyle" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Estilo de vida</a></li>
+                        <li><a href="./about.html" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">La anfitriona</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="./privacy.html" rel="noopener">Política de privacidad</a></li>
-                        <li><a href="./cookies.html" rel="noopener">Política de cookies</a></li>
-                        <li><a href="./legal.html" rel="noopener">Aviso legal</a></li>
+                    <h3 class="tw-font-semibold tw-mb-2">Legal</h3>
+                    <ul class="tw-space-y-2">
+                        <li><a href="./privacy.html" rel="noopener" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Política de privacidad</a></li>
+                        <li><a href="./cookies.html" rel="noopener" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Política de cookies</a></li>
+                        <li><a href="./legal.html" rel="noopener" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Aviso legal</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="mailto:info@villabonmont.com">info@villabonmont.com</a></li>
+                <div class="footer-section md:tw-col-span-2">
+                    <h3 class="tw-font-semibold tw-mb-2">Contact</h3>
+                    <ul class="tw-space-y-2">
+                        <li><a href="mailto:info@villabonmont.com" class="tw-text-sm tw-text-[var(--color-text)]">info@villabonmont.com</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Villa Bonmont Terres Noves. Todos los derechos reservados.</p>
+            <div class="footer-bottom tw-max-w-[1200px] tw-mx-auto tw-px-4 tw-mt-6">
+                <p class="tw-text-center tw-text-sm tw-text-gray-500">&copy; 2026 Villa Bonmont Terres Noves. Todos los derechos reservados.</p>
             </div>
         </nav>
     </footer>

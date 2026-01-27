@@ -800,7 +800,7 @@ figcaption {
 }
 
 /* Make the page title and intro more compact */
-.equip-grid h2 { margin-top: 0; margin-bottom: .6rem; }
+.equip-grid h2 { margin-top: 0; margin-bottom: .6rem; text-align: center; }
 .equip-grid p { margin-bottom: .6rem; max-width: 900px; }
 
 
@@ -825,13 +825,12 @@ figcaption {
     border: 1px solid rgba(0,0,0,0.04);
 } 
 .equip-section summary::-webkit-details-marker { display:none; }
+/* Replaced pseudo-element with explicit .indicator element (see pages/equipamiento-bienestar.html) */
 .equip-section summary::after {
-    content: "▾";
-    transition: transform .18s ease;
-    font-size: .95rem;
-    color: #666;
+    display: none;
 }
-.equip-section[open] summary::after { transform: rotate(180deg); }
+/* When open, rotate the explicit indicator inside the summary */
+.equip-section[open] summary .indicator { transform: rotate(180deg); }
 
 /* Summary thumbnails (appear inside the closed summary line) */
 .summary-title { display:block; flex:1; }
@@ -839,6 +838,7 @@ figcaption {
 .summary-thumbs a { display:block; width:80px; height:56px; overflow:hidden; border-radius:6px; background:var(--color-light); }
 .summary-thumbs img { width:100%; height:100%; object-fit:cover; display:block; }
 
+/* .summary-thumbs is visible by default in HTML; hide it on small screens to match previous behavior */
 @media (max-width: 720px) {
     .summary-thumbs { display: none; }
 }
