@@ -266,7 +266,7 @@ Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; 
 ### Image Formats by Use Case
 | Use Case | AVIF | WebP | JPG | Size Limit |
 |----------|------|------|-----|-----------|
-| Hero Background | 800-1200px | 800-1200px | 800-1200px | 200KB |
+| Hero Background | 800-1400px | 800-1400px | 800-1400px | 200KB |
 | Content Image | Yes | Yes | Yes | 100KB |
 | Thumbnail | Yes | Yes | Yes | 50KB |
 | Social OG | N/A | N/A | Yes | 1200x630px |
