@@ -160,6 +160,10 @@ Tailwind CSS (optional build step):
 
 Notes: Tailwind is configured with prefix `tw-` and **Preflight is disabled** so it coexists safely with the existing `css/styles.css`. Include `css/tailwind.generated.css` in the head after `css/styles.css` to apply new utilities.
 
+Tailwind migration (short):
+- We follow a **per-block migration** policy (no mass global migrations). See `.github/copilot-instructions.md` → **Tailwind migration & block guidelines** for the full process.
+- Quick checklist: use `tw-` prefixes only, run `node scripts/build-tailwind.js` and verify with a hard refresh, remove any diagnostic helpers (temporary colours/outlines) before merging, and document any edits to `css/styles.css` in the PR. Also note in the PR whether `css/tailwind.generated.css` is committed or omitted.
+
 ### 3. **Deployment to Production**
 
 #### Prerequisites:
