@@ -122,13 +122,13 @@
     <main id="main" role="main">
         
         <!-- 1. HERO SECTION -->
-        <section id="hero" class="hero" aria-label="Hero banner">
-            <video autoplay muted playsinline class="hero-video" poster="images/hero-poster.jpg">
+        <section id="hero" class="hero tw-relative tw-h-screen tw-min-h-[600px] tw-overflow-hidden tw-flex tw-items-center tw-justify-center" aria-label="Hero banner">
+            <video autoplay muted playsinline class="hero-video tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover" poster="images/hero-poster.jpg">
                 <source src="images/hero-night.webm" type="video/webm">
                 Your browser does not support the video tag.
             </video>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
+            <div class="hero-overlay tw-absolute tw-inset-0 tw-bg-black/40"></div>
+            <div class="hero-content tw-relative tw-z-[3] tw-text-center tw-text-white tw-py-32 tw-px-4 tw-flex tw-flex-col tw-justify-between tw-h-full">
                 <h1>An exclusive refuge designed to be lived</h1>
                 <a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71" class="btn btn-primary" aria-label="Consultar disponibilidad en Airbnb">Crea recuerdos</a>
                 <h2 class="hero-tagline">Haz que tu visita a la Costa Dorada sea inolvidable</h2>
@@ -271,103 +271,103 @@
                     </div>
 
                     <!-- 4 Main Amenity Blocks -->
-                    <div class="amenities-grid">
+                    <div class="amenities-grid tw-grid tw-grid-cols-1 md:tw-grid-cols-4 tw-gap-8 tw-gap-x-8 tw-max-w-[1200px] tw-w-full tw-mx-auto tw-px-4">
                         <!-- Block 1: Comfort -->
-                        <div class="amenity-block">
-                            <h4 class="amenity-block-title tw-mb-2">BIENESTAR Y DESCANSO</h4>
+                        <div class="amenity-block tw-gap-3 tw-min-w-0">
+                            <h4 class="amenity-block-title tw-mb-0">BIENESTAR Y DESCANSO</h4>
                             <div class="amenity-block-items">
                                 <div class="amenity-item">
                                     <i data-feather="wind"></i>
-                                    <p class="tw-leading-relaxed">Aire acondicionado en toda la casa</p>
+                                    <p class="tw-leading-7">Aire acondicionado en toda la casa</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="wifi"></i>
-                                    <p class="tw-leading-relaxed">WiFi de alta velocidad</p>
+                                    <p class="tw-leading-7">WiFi de alta velocidad</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="package"></i>
-                                    <p class="tw-leading-relaxed">Camas king size</p>
+                                    <p class="tw-leading-7">Camas king size</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="umbrella"></i>
-                                    <p class="tw-leading-relaxed">Toldos eléctricos</p>
+                                    <p class="tw-leading-7">Toldos eléctricos</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="award"></i>
-                                    <p class="tw-leading-relaxed">Cocina totalmente equipada</p>
+                                    <p class="tw-leading-7">Cocina totalmente equipada</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="heart"></i>
-                                    <p class="tw-leading-relaxed">Se admiten mascotas</p>
+                                    <p class="tw-leading-7">Se admiten mascotas</p>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Block 2: Family Fun -->
-                        <div class="amenity-block">
-                            <h4 class="amenity-block-title tw-mb-2">OCIO EXTERIOR Y ESENCIA</h4>
+                        <div class="amenity-block tw-gap-3 tw-min-w-0">
+                            <h4 class="amenity-block-title tw-mb-0">OCIO EXTERIOR Y ESENCIA</h4>
                             <div class="amenity-block-items">
                                 <div class="amenity-item">
                                     <i data-feather="droplet"></i>
-                                    <p class="tw-leading-relaxed">Piscina de agua salina</p>
+                                    <p class="tw-leading-7">Piscina de agua salina</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="sun"></i>
-                                    <p class="tw-leading-relaxed">Barbacoa</p>
+                                    <p class="tw-leading-7">Barbacoa</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="target"></i>
-                                    <p class="tw-leading-relaxed">Juegos de mesa</p>
+                                    <p class="tw-leading-7">Juegos de mesa</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="smile"></i>
-                                    <p class="tw-leading-relaxed">Zona de juegos exterior</p>
+                                    <p class="tw-leading-7">Zona de juegos exterior</p>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Block 3: Peace of Mind -->
-                        <div class="amenity-block">
-                            <h4 class="amenity-block-title tw-mb-2">SEGURIDAD Y PRIVACIDAD</h4>
+                        <div class="amenity-block tw-gap-3 tw-min-w-0">
+                            <h4 class="amenity-block-title tw-mb-0">SEGURIDAD Y PRIVACIDAD</h4>
                             <div class="amenity-block-items">
                                 <div class="amenity-item">
                                     <i data-feather="shield"></i>
-                                    <p class="tw-leading-relaxed">Seguridad 24/7</p>
+                                    <p class="tw-leading-7">Seguridad 24/7</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="truck"></i>
-                                    <p class="tw-leading-relaxed">Aparcamiento privado</p>
+                                    <p class="tw-leading-7">Aparcamiento privado</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="lock"></i>
-                                    <p class="tw-leading-relaxed">Parcela privada</p>
+                                    <p class="tw-leading-7">Parcela privada</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="user-check"></i>
-                                    <p class="tw-leading-relaxed">Accesible para sillas de ruedas</p>
+                                    <p class="tw-leading-7">Accesible para sillas de ruedas</p>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Block 4: Travel Light -->
-                        <div class="amenity-block">
-                            <h4 class="amenity-block-title tw-mb-2">SERVICIOS DE CORTESÍA</h4>
+                        <div class="amenity-block tw-gap-3 tw-min-w-0">
+                            <h4 class="amenity-block-title tw-mb-0">SERVICIOS DE CORTESÍA</h4>
                             <div class="amenity-block-items">
                                 <div class="amenity-item">
                                     <i data-feather="anchor"></i>
-                                    <p class="tw-leading-relaxed">Toallas de playa y piscina</p>
+                                    <p class="tw-leading-7">Toallas de playa y piscina</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="circle"></i>
-                                    <p class="tw-leading-relaxed">Cunas</p>
+                                    <p class="tw-leading-7">Cunas</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="grid"></i>
-                                    <p class="tw-leading-relaxed">Tronas</p>
+                                    <p class="tw-leading-7">Tronas</p>
                                 </div>
                                 <div class="amenity-item">
                                     <i data-feather="chevron-up"></i>
-                                    <p class="tw-leading-relaxed">Alzadores</p>
+                                    <p class="tw-leading-7">Alzadores</p>
                                 </div>
                                 <p class="more" style="margin-top:1rem;">
                                     <a href="pages/equipamiento-bienestar.html" class="link-arrow">Ver más equipamiento y bienestar →</a>
@@ -407,7 +407,7 @@
         <!-- 4. INTERIOR SPACES PREVIEW -->
         <section class="interiors-preview" aria-labelledby="spaces-title">
             <h3 id="spaces-title" class="experience-subtitle" style="margin-bottom: 0;">El corazón de la casa</h3>
-            <p style="font-family: 'Poppins', sans-serif; font-style: italic; color: #666; margin-top: 1.5rem; margin-bottom: 4rem; font-size: 1.1rem; line-height: 1.8; max-width: 1200px;">Donde el diseño cobra vida y cada estancia late con un único propósito: tu comodidad y bienestar.</p>
+            <p style="font-family: 'Poppins', sans-serif; font-style: italic; color: #666; margin-top: 1.5rem; margin-bottom: 4rem; font-size: 1.1rem; line-height: 1.8; max-width: 1400px;">Donde el diseño cobra vida y cada estancia late con un único propósito: tu comodidad y bienestar.</p>
             <div class="spaces-grid">
                 <article class="space-card">
                     <figure>
@@ -486,7 +486,7 @@
             <!-- Espacios Vivos Title -->
         <section class="interiors-preview" aria-labelledby="outdoor-spaces-title">
             <h3 id="outdoor-spaces-title" class="experience-subtitle" style="margin-bottom: 0;">Espacios Vivos</h3>
-            <p style="font-family: 'Poppins', sans-serif; font-style: italic; color: #666; margin-top: 1.5rem; margin-bottom: 4rem; font-size: 1.1rem; line-height: 1.8; max-width: 1200px;">Siente el exterior a tu manera.</p>
+            <p style="font-family: 'Poppins', sans-serif; font-style: italic; color: #666; margin-top: 1.5rem; margin-bottom: 4rem; font-size: 1.1rem; line-height: 1.8; max-width: 1400px;">Siente el exterior a tu manera.</p>
 
             <div class="outdoor-gallery">
                 <article class="space-card">
@@ -521,7 +521,7 @@
             <div style="max-width: 1400px; margin: 0 auto;">
                 <h2 id="lifestyle-title" class="section-main-title">Privilegios del entorno</h2>
                 <h3 id="lifestyle-sub" class="experience-subtitle" style="margin-bottom: 0;">Explora la Costa Dorada</h3>
-                <p style="font-family: 'Poppins', sans-serif; font-style: italic; color: #666; margin-top: 1.5rem; margin-bottom: 4rem; font-size: 1.1rem; line-height: 1.8; max-width: 1200px;">En el exclusivo enclave Bonmont Terres Noves, Villa Bonmont ofrece el equilibrio perfecto entre tranquilidad y proximidad a las mejores atracciones de la Costa Dorada.</p>
+                <p style="font-family: 'Poppins', sans-serif; font-style: italic; color: #666; margin-top: 1.5rem; margin-bottom: 4rem; font-size: 1.1rem; line-height: 1.8; max-width: 1400px;">En el exclusivo enclave Bonmont Terres Noves, Villa Bonmont ofrece el equilibrio perfecto entre tranquilidad y proximidad a las mejores atracciones de la Costa Dorada.</p>
             </div>
             <div class="lifestyle-grid">
                 <article class="lifestyle-card">
