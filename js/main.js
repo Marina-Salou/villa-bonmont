@@ -330,4 +330,41 @@ window.addEventListener('popstate', highlightCurrentNav);
     });
 })();
 
+// Theme toggle (persisted, accessible)
+(function initThemeToggle(){
+    const btn = document.getElementById('themeToggle');
+    const storageKey = 'villa-theme';
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function applyTheme(theme){
+        try{ document.documentElement.setAttribute('data-theme', theme); }catch(e){}
+        if (btn){
+            btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            btn.textContent = theme === 'dark' ? '🌙' : '🌞';
+            btn.title = theme === 'dark' ? 'Activar tema claro' : 'Activar tema oscuro';
+        }
+    }
+
+    // initialize
+    const saved = localStorage.getItem(storageKey);
+    let theme = saved || (prefersDark ? 'dark' : 'light');
+    applyTheme(theme);
+
+    // listen to system changes if user has no preference stored
+    if (!saved && window.matchMedia){
+        const mq = window.matchMedia('(prefers-color-scheme: dark)');
+        if (mq.addEventListener) mq.addEventListener('change', (e)=> applyTheme(e.matches ? 'dark' : 'light'));
+        else if (mq.addListener) mq.addListener((e)=> applyTheme(e.matches ? 'dark' : 'light'));
+    }
+
+    if (btn){
+        btn.addEventListener('click', ()=>{
+            const current = document.documentElement.getAttribute('data-theme') || 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            localStorage.setItem(storageKey, next);
+            applyTheme(next);
+        });
+    }
+})();
+
 console.log('Villa Bonmont - Main JS loaded');

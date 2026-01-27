@@ -221,6 +221,13 @@ figcaption {
     align-items: center;
 }
 
+/* Ensure header content aligns exactly to the site container width */
+.header .navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
 .logo a {
     font-family: var(--font-serif);
     font-size: 1.5rem;
@@ -796,12 +803,19 @@ figcaption {
 .equip-grid {
     max-width: 1100px;
     margin: 0 auto;
-    padding: var(--spacing-md) var(--spacing-md);
+    /* More vertical breathing room at the top for clarity */
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+} 
+
+/* Scoped override: when a tw-max-w-[1400px] class is present set the desired max width */
+/* Match the Tailwind arbitrary class using an attribute selector (brackets in class names require escaping in selectors) */
+.equip-grid[class*="tw-max-w-[1400px]"] {
+    max-width: 1400px;
 }
 
-/* Make the page title and intro more compact */
-.equip-grid h2 { margin-top: 0; margin-bottom: .6rem; }
-.equip-grid p { margin-bottom: .6rem; max-width: 900px; }
+/* Make the page title and intro more spacious */
+.equip-grid h2 { margin-top: var(--spacing-md); margin-bottom: var(--spacing-md); text-align: center; }
+.equip-grid p { margin-top: 1rem; margin-bottom: var(--spacing-lg); max-width: 900px; text-align: center; margin-left: auto; margin-right: auto; }
 
 
 
@@ -825,20 +839,23 @@ figcaption {
     border: 1px solid rgba(0,0,0,0.04);
 } 
 .equip-section summary::-webkit-details-marker { display:none; }
+/* Replaced pseudo-element with explicit .indicator element (see pages/equipamiento-bienestar.html) */
 .equip-section summary::after {
-    content: "▾";
-    transition: transform .18s ease;
-    font-size: .95rem;
-    color: #666;
+    display: none;
 }
-.equip-section[open] summary::after { transform: rotate(180deg); }
+/* When open, rotate the explicit indicator inside the summary */
+.equip-section[open] summary .indicator { transform: rotate(180deg); }
 
 /* Summary thumbnails (appear inside the closed summary line) */
 .summary-title { display:block; flex:1; }
-.summary-thumbs { display:flex; gap:0.5rem; margin-left:1rem; }
-.summary-thumbs a { display:block; width:80px; height:56px; overflow:hidden; border-radius:6px; background:var(--color-light); }
+.summary-thumbs { display:flex; gap:0.5rem; margin-left:0.5rem; align-items:center; }
+.summary-thumbs a { display:block; width:auto; height:auto; overflow:hidden; border-radius:6px; background:var(--color-light); }
+/* Constrain the actual thumbnail images while allowing anchors to be flexible
+   so the block can expand horizontally while thumbnails remain small */
+.summary-thumbs .summary-thumb { max-width:80px; max-height:56px; width:auto; height:auto; object-fit:cover; display:block; }
 .summary-thumbs img { width:100%; height:100%; object-fit:cover; display:block; }
 
+/* .summary-thumbs is visible by default in HTML; hide it on small screens to match previous behavior */
 @media (max-width: 720px) {
     .summary-thumbs { display: none; }
 }
@@ -1746,7 +1763,7 @@ figcaption {
 }
 
 .cookie-content {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -1989,6 +2006,34 @@ figcaption {
     .btn {
         border-color: white;
         color: white;
+    }
+}
+
+/* Theme toggle support: allow explicit override via html[data-theme] */
+html[data-theme="light"] body {
+    background-color: white;
+    color: var(--color-text);
+}
+html[data-theme="light"] .header { background-color: rgba(255,255,255,0.6); color: var(--color-primary); }
+html[data-theme="light"] .logo a { color: var(--color-primary); }
+html[data-theme="dark"] body { background-color: #0a0a0a; color: #f0f0f0; }
+html[data-theme="dark"] .header { background-color: var(--color-primary); color: white; }
+html[data-theme="dark"] .logo a { color: white; }
+
+/* Theme toggle button */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0.35rem 0.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.theme-toggle:focus { outline: 2px dashed var(--color-secondary); outline-offset: 2px; }
+.theme-toggle:hover { background: rgba(0,0,0,0.03); }
+.theme-toggle[aria-pressed="true"] { background: rgba(0,0,0,0.06); }
     }
 
     .footer {

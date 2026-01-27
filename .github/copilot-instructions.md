@@ -42,7 +42,7 @@ Tailwind migration & block guidelines
 - Safety & style rules:
   - Always use `tw-` prefix for new utilities. Do not apply global Tailwind classes or rewrite global CSS in bulk.
   - Avoid `!important` and `!` utility variants unless documented and approved in the PR.
-  - The 1200px container rule (`tw-max-w-[1200px] tw-mx-auto`) should be applied per-block only; confirm adjacent elements aren't affected.
+  - The 1400px container rule (`tw-max-w-[1400px] tw-mx-auto`) should be applied per-block only; confirm adjacent elements aren't affected.
 - PR checklist (to include in PR description): include whether `css/tailwind.generated.css` is committed or omitted, confirm diagnostics removed, confirm visual checks and cross-browser testing, and list any `css/styles.css` edits.
 
 Conventions & patterns (do not change without reason)
