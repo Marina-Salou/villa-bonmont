@@ -24,6 +24,26 @@ Developer workflows & commands
   - `npm run convert-images` (defaults: `images/equipamiento` → creates `name-800.webp`, `name-1200.webp`)
   - Example: `node scripts/convert-images.js images/equipamiento 800 1200`
 - QA & auditing: use Chrome Lighthouse, PageSpeed Insights, and Wave accessibility checks (see README checklist).
+- Tailwind CSS: Tailwind has been added as an optional utility layer. Key points:
+  - Config: `tailwind.config.cjs` (prefix: `tw-`, Preflight disabled to coexist with `css/styles.css`).
+  - Entry: `css/tailwind.css` → generated output: `css/tailwind.generated.css`.
+  - Install dev deps: `npm install --save-dev tailwindcss postcss autoprefixer`.
+  - Build scripts: `npm run build:css` (one-off) and `npm run watch:css` (dev).
+  - **Important:** All new classes and usages must use the `tw-` prefix (e.g., `tw-bg-white tw-p-4`).
+  - Keep changes scoped: avoid editing legacy `css/styles.css` unless requested.
+
+Tailwind migration & block guidelines
+- No large-scale or global Tailwind migrations without explicit approval. Create an issue describing scope, risks, phased plan and rollback strategy before attempting broad changes.
+- Per-block process (mandatory):
+  1. Make an atomic change scoped to a single block/page and include a short note in the commit message explaining intent and files affected.
+  2. Run `node scripts/build-tailwind.js` and verify visually (hard refresh) on desktop and mobile breakpoints.
+  3. Remove diagnostic helpers (temporary colors, outlines) before merging.
+  4. Document any edits to `css/styles.css` in the PR and explain why legacy CSS needed adjustment.
+- Safety & style rules:
+  - Always use `tw-` prefix for new utilities. Do not apply global Tailwind classes or rewrite global CSS in bulk.
+  - Avoid `!important` and `!` utility variants unless documented and approved in the PR.
+  - The 1200px container rule (`tw-max-w-[1200px] tw-mx-auto`) should be applied per-block only; confirm adjacent elements aren't affected.
+- PR checklist (to include in PR description): include whether `css/tailwind.generated.css` is committed or omitted, confirm diagnostics removed, confirm visual checks and cross-browser testing, and list any `css/styles.css` edits.
 
 Conventions & patterns (do not change without reason)
 - Image strategy: source images in AVIF/WebP/JPG; prefer AVIF, fallback to WebP/JPG in `<picture>` elements. Filenames: `name.{avif,webp,jpg}`; converted/resized files follow `name-<width>.webp`.
