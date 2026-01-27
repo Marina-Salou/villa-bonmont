@@ -834,7 +834,7 @@ figcaption {
 
 /* Summary thumbnails (appear inside the closed summary line) */
 .summary-title { display:block; flex:1; }
-.summary-thumbs { display:flex; gap:0.5rem; margin-left:1rem; }
+.summary-thumbs { display:flex; gap:0.5rem; margin-left:0.5rem; }
 .summary-thumbs a { display:block; width:80px; height:56px; overflow:hidden; border-radius:6px; background:var(--color-light); }
 .summary-thumbs img { width:100%; height:100%; object-fit:cover; display:block; }
 
