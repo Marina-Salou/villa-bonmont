@@ -251,12 +251,12 @@ window.addEventListener('popstate', highlightCurrentNav);
 // Simple lightbox implementation
 (function() {
     const overlay = document.createElement('div');
-    overlay.className = 'lightbox-overlay';
+    overlay.className = 'lightbox-overlay tw-fixed tw-inset-0 tw-hidden tw-items-center tw-justify-center tw-bg-[rgba(0,0,0,0.85)] tw-z-[1000] tw-p-8';
     overlay.innerHTML = `
-        <button class="lightbox-close" aria-label="Cerrar">&times;</button>
-        <div class="lightbox-content" role="dialog" aria-modal="true">
-            <img src="" alt="">
-            <div class="lightbox-caption"></div>
+        <button class="lightbox-close tw-absolute tw-top-4 tw-right-4 tw-bg-none tw-border-none tw-text-white tw-text-2xl" aria-label="Cerrar">&times;</button>
+        <div class="lightbox-content tw-max-w-[90%] tw-max-h-[90%] tw-flex tw-flex-col tw-gap-2 tw-items-center" role="dialog" aria-modal="true">
+            <img src="" alt="" class="tw-max-w-full tw-max-h-[80vh] tw-rounded">
+            <div class="lightbox-caption tw-text-white tw-text-sm tw-opacity-90"></div>
         </div>
     `;
     document.body.appendChild(overlay);
@@ -276,11 +276,15 @@ window.addEventListener('popstate', highlightCurrentNav);
         overlayImg.alt = link.querySelector('img')?.alt || '';
         overlayCaption.textContent = link.dataset.caption || '';
         overlay.classList.add('active');
+        overlay.classList.remove('tw-hidden');
+        overlay.classList.add('tw-flex');
         document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
         overlay.classList.remove('active');
+        overlay.classList.remove('tw-flex');
+        overlay.classList.add('tw-hidden');
         overlayImg.src = '';
         document.body.style.overflow = '';
     }

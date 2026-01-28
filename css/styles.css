@@ -182,7 +182,7 @@ figcaption {
 }
 
 /* SKIP LINK - ACCESSIBILITY */
-.skip-link {
+:not(body[data-page="about"]) .skip-link {
     position: absolute;
     top: -40px;
     left: 0;
@@ -193,9 +193,9 @@ figcaption {
     z-index: 100;
 }
 
-.skip-link:focus {
+:not(body[data-page="about"]) .skip-link:focus {
     top: 0;
-}
+} 
 
 /* HEADER & NAVIGATION */
 .header {
@@ -252,19 +252,19 @@ figcaption {
     transition: var(--transition);
 }
 
-.menu-toggle.active span:nth-child(1) {
+:not(body[data-page="about"]) .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(8px, 8px);
 }
 
-.menu-toggle.active span:nth-child(2) {
+:not(body[data-page="about"]) .menu-toggle.active span:nth-child(2) {
     opacity: 0;
 }
 
-.menu-toggle.active span:nth-child(3) {
+:not(body[data-page="about"]) .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
-}
+} 
 
-.nav-menu {
+:not(body[data-page="about"]) .nav-menu {
     display: none;
     position: absolute;
     top: 70px;
@@ -276,9 +276,9 @@ figcaption {
     box-shadow: var(--shadow-md);
 }
 
-.nav-menu.active {
+:not(body[data-page="about"]) .nav-menu.active {
     display: flex;
-}
+} 
 
 .nav-menu li {
     border-bottom: 1px solid var(--color-border);
@@ -958,7 +958,7 @@ figcaption {
 }
 
 /* Lightbox */
-.lightbox-overlay {
+:not(body[data-page="about"]) .lightbox-overlay {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.85);
@@ -969,11 +969,11 @@ figcaption {
     padding: 2rem;
 }
 
-.lightbox-overlay.active {
+:not(body[data-page="about"]) .lightbox-overlay.active {
     display: flex;
 }
 
-.lightbox-content {
+:not(body[data-page="about"]) .lightbox-content {
     max-width: 90%;
     max-height: 90%;
     display: flex;
@@ -982,7 +982,7 @@ figcaption {
     align-items: center;
 }
 
-.lightbox-content img {
+:not(body[data-page="about"]) .lightbox-content img {
     max-width: 100%;
     max-height: 80vh;
     width: auto;
@@ -990,13 +990,13 @@ figcaption {
     border-radius: 6px;
 }
 
-.lightbox-caption {
+:not(body[data-page="about"]) .lightbox-caption {
     color: #fff;
     font-size: 0.95rem;
     opacity: 0.9;
 }
 
-.lightbox-close {
+:not(body[data-page="about"]) .lightbox-close {
     position: absolute;
     top: 1rem;
     right: 1rem;
