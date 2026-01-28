@@ -17,3 +17,8 @@ html[data-theme="dark"] {
 
 /* Small helpers used by PoC pages */
 .tw-header-translucent { background-color: rgba(255,255,255,0.6); }
+
+/* Display heading utility (uses Libre Bodoni as the display face) */
+.tw-font-heading {
+  font-family: 'Libre Bodoni', var(--font-serif);
+}
