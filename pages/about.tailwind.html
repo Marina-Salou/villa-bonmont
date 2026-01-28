@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Meet Idoia, Airbnb Superhost and owner of Villa Bonmont.">
+  <title>About Idoia — Tailwind PoC</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/tailwind.generated.css">
+</head>
+<body data-page="about">
+  <a href="#main" class="skip-link tw-absolute -tw-top-[40px] tw-left-0 tw-bg-[var(--color-primary)] tw-text-white tw-px-4 tw-py-2 tw-z-50 focus:tw-top-0">Skip to main content</a>
+
+  <header class="tw-bg-[rgba(255,255,255,0.6)] tw-backdrop-blur tw-sticky tw-top-0 tw-z-50 tw-border-b tw-border-[rgba(0,0,0,0.05)]" role="banner">
+    <nav class="tw-max-w-[1400px] tw-mx-auto tw-px-6 tw-flex tw-items-center tw-justify-between tw-h-16" aria-label="Main navigation">
+      <a href="../index.html" class="tw-font-serif tw-text-2xl tw-text-[var(--color-primary)]">Villa Bonmont</a>
+
+      <div class="tw-flex tw-items-center">
+        <button id="themeToggle" class="theme-toggle tw-mr-4" aria-label="Cambiar tema">🌞</button>
+        <button id="menuToggle" class="menu-toggle tw-flex md:tw-hidden tw-flex-col tw-gap-1" aria-label="Toggle menu" aria-expanded="false">
+          <span class="tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-origin-center tw-transition-transform tw-duration-200"></span>
+          <span class="tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-origin-center tw-transition-transform tw-duration-200"></span>
+          <span class="tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-origin-center tw-transition-transform tw-duration-200"></span>
+        </button>
+      </div>
+
+      <ul id="navMenu" class="nav-menu tw-hidden md:tw-flex tw-items-center tw-gap-6">
+        <li><a href="../index.html" class="tw-text-sm">Home</a></li>
+        <li><a href="./interiors.html" class="tw-text-sm">Interiors</a></li>
+        <li><a href="./equipamiento-bienestar.html" class="tw-text-sm">Equipamiento y Bienestar</a></li>
+        <li><a href="../index.html#lifestyle" class="tw-text-sm">Lifestyle</a></li>
+        <li><a href="./about.html" class="tw-text-sm">About</a></li>
+        <li><a href="https://www.airbnb.es/rooms/42616703" class="cta-link tw-bg-[var(--color-primary)] tw-text-white tw-rounded tw-px-4 tw-py-2">Reserve</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" role="main">
+    <section class="tw-py-16 tw-px-6 tw-max-w-[1400px] tw-mx-auto">
+      <h1 class="tw-text-3xl tw-font-serif tw-font-light tw-mb-4">About Idoia</h1>
+
+      <article class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-12 tw-items-center tw-mb-16">
+        <figure class="tw-rounded tw-overflow-hidden">
+          <picture>
+            <img src="../images/idoia.webp" alt="Idoia, Airbnb Superhost" class="tw-w-full tw-h-auto tw-block">
+          </picture>
+        </figure>
+
+        <div>
+          <h2 class="tw-text-xl tw-font-semibold tw-mb-3">Airbnb Superhost</h2>
+          <p class="tw-text-[1.2rem] tw-text-[#666] tw-mb-6">11 years of hospitality excellence</p>
+
+          <p>Idoia is a dedicated Airbnb Superhost with an exceptional rating of 4.83/5 based on 123 guest reviews. With 11 years of experience hosting guests from around the world, she has perfected the art of hospitality.</p>
+
+          <p>Her passion for detail, cleanliness, and guest satisfaction is evident in every aspect of Villa Bonmont. Idoia personally ensures that each guest receives a warm welcome and has everything they need for an unforgettable stay.</p>
+
+          <h3 class="tw-mt-6">What Guests Say:</h3>
+          <blockquote class="tw-border-l-4 tw-border-[var(--color-secondary)] tw-pl-6 tw-my-8 tw-italic tw-text-[#666]">"Idoia is attentive, responsive, and truly cares about her guests. Villa Bonmont exceeded all expectations. We felt at home from the moment we arrived."</blockquote>
+
+          <h3>Response Rate:</h3>
+          <p>Idoia responds to inquiries in less than one hour, ensuring all your questions are answered promptly.</p>
+        </div>
+      </article>
+
+      <article class="tw-bg-[var(--color-accent)] tw-p-8 tw-rounded tw-mb-16">
+        <h2 class="tw-text-xl tw-font-semibold tw-mb-3">Villa Management</h2>
+        <p>Living just 20 kilometers from Villa Bonmont, Idoia is close enough to provide support when needed, yet far enough to ensure complete privacy for her guests.</p>
+        <p class="tw-mt-4">Her meticulous attention to detail extends to every corner of the villa, from the perfectly manicured gardens to the carefully curated interiors. She personally oversees maintenance and cleanliness to ensure the villa always maintains its luxury standards.</p>
+      </article>
+
+      <article>
+        <h2 class="tw-text-xl tw-font-semibold tw-mb-3">Interests & Hobbies</h2>
+        <ul class="tw-text-[1.1rem] tw-leading-8">
+          <li>🏌️ Golf</li>
+          <li>🌊 The Mediterranean Sea</li>
+          <li>🐾 Animal Care</li>
+          <li>🏡 Home Design & Renovation</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="tw-bg-white tw-border-t tw-border-gray-100 tw-pt-8 tw-pb-8" role="contentinfo">
+    <div class="tw-max-w-[1400px] tw-mx-auto tw-px-4 tw-grid tw-grid-cols-1 md:tw-grid-cols-4 tw-gap-6">
+      <div>
+        <h3 class="tw-font-semibold tw-mb-2">Villa Bonmont</h3>
+        <ul class="tw-space-y-2">
+          <li><a href="../index.html" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Home</a></li>
+          <li><a href="./interiors.html" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Interiors</a></li>
+          <li><a href="./equipamiento-bienestar.html" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Equipamiento y Bienestar</a></li>
+          <li><a href="../index.html#lifestyle" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Lifestyle</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="tw-font-semibold tw-mb-2">Legal</h3>
+        <ul class="tw-space-y-2">
+          <li><a href="./privacy.html" rel="noopener" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Privacy Policy</a></li>
+          <li><a href="./cookies.html" rel="noopener" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Cookie Policy</a></li>
+          <li><a href="./legal.html" rel="noopener" class="tw-text-sm tw-text-[var(--color-text)] hover:tw-text-[var(--color-secondary)]">Legal Notice</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="tw-font-semibold tw-mb-2">Contact</h3>
+        <ul class="tw-space-y-2">
+          <li><a href="mailto:info@villabonmont.com" class="tw-text-sm tw-text-[var(--color-text)]">info@villabonmont.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tw-max-w-[1400px] tw-mx-auto tw-px-4 tw-mt-6 tw-text-center tw-text-sm tw-text-gray-500">© 2026 Villa Bonmont Terres Noves. All rights reserved.</div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
