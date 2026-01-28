@@ -8,15 +8,19 @@ const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 
 menuToggle.addEventListener('click', () => {
+    // keep .active for the button's visual transform (CSS targets .menu-toggle.active)
     menuToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    // use Tailwind utilities for show/hide on mobile
+    navMenu.classList.toggle('tw-hidden');
+    navMenu.classList.toggle('tw-flex');
 });
 
 // Close menu when clicking on a link
 navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
+        navMenu.classList.add('tw-hidden');
+        navMenu.classList.remove('tw-flex');
     });
 });
 
@@ -24,7 +28,8 @@ navMenu.querySelectorAll('a').forEach(link => {
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.navbar')) {
         menuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
+        navMenu.classList.add('tw-hidden');
+        navMenu.classList.remove('tw-flex');
     }
 });
 
