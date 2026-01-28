@@ -13,8 +13,10 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
-    "autoprefixer": "*",
-    "postcss": "*",
-    "tailwindcss": "*"
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.18",
+    "tailwindcss-cli": "^0.1.2"
   }
 }

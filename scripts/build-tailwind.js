@@ -1,13 +1,18 @@
 const fs = require('fs');
 const postcss = require('postcss');
+// Ensure Tailwind runs in development mode during local builds so we get all utilities during debugging
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 const tailwindPlugin = require('@tailwindcss/postcss');
 const autoprefixer = require('autoprefixer');
+const tailwindConfig = require('../tailwind.config.js');
 
 (async () => {
   try {
     const input = fs.readFileSync('css/tailwind.css', 'utf8');
-    // Use the postcss plugin and pass the actual config object to ensure `prefix` is read
-    const result = await postcss([tailwindPlugin({ config: './tailwind.config.cjs', prefix: 'tw-' }), autoprefixer]).process(input, {
+    // Use the postcss plugin and pass the actual config object to ensure `prefix` and safelist are read
+    const mergedConfig = Object.assign({}, tailwindConfig, { content: [...tailwindConfig.content, './test-content.html'] });
+    console.log('Tailwind config being used in build:', JSON.stringify({ prefix: mergedConfig.prefix, content: mergedConfig.content, safelist: mergedConfig.safelist }, null, 2));
+    const result = await postcss([tailwindPlugin(mergedConfig), autoprefixer]).process(input, {
       from: 'css/tailwind.css',
       to: 'css/tailwind.generated.css'
     });
