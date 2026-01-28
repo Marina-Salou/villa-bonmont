@@ -30,8 +30,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Print resolved Tailwind config
+        run: node -e "console.log(require('./tailwind.config.js'))"
+
       - name: Build Tailwind (node script)
         run: node scripts/build-tailwind.js
+
+      - name: Print generated CSS header
+        run: head -n 60 css/tailwind.generated.css || true
 
       - name: Verify responsive classes exist
         run: |
