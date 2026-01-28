@@ -41,4 +41,5 @@ jobs:
 
       - name: Verify responsive classes exist
         run: |
-          if grep -E "md\\:tw-|@media \(min-width: 768px\)" -n css/tailwind.generated.css; then echo "Responsive classes present"; else echo "ERROR: responsive classes missing" && exit 1; fi
+          # Accept escaped or unescaped colons and optional spaces in @media
+          if grep -E "md\\:tw-|md:tw-|@media *\\(min-width: *768px\\)" -n css/tailwind.generated.css; then echo "Responsive classes present"; else echo "ERROR: responsive classes missing" && exit 1; fi
