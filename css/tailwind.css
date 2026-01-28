@@ -1,5 +1,5 @@
-/* Tailwind entry (prefixed classes). Preflight is disabled to coexist with legacy css/styles.css */
 @config "../tailwind.config.js";
+/* Tailwind entry (prefixed classes). Preflight is disabled to coexist with legacy css/styles.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
