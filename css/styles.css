@@ -807,6 +807,9 @@ figcaption {
     padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
 } 
 
+/* Fallback container for pages during Tailwind migration */
+.about-container { padding: 4rem 1.5rem; max-width: 900px; margin: 0 auto; }
+
 /* Scoped override: when a tw-max-w-[1400px] class is present set the desired max width */
 /* Match the Tailwind arbitrary class using an attribute selector (brackets in class names require escaping in selectors) */
 .equip-grid[class*="tw-max-w-[1400px]"] {
@@ -1812,6 +1815,9 @@ figcaption {
         box-shadow: none;
     }
 
+    /* Ensure Tailwind 'tw-hidden' doesn't hide desktop nav; fallback for migration */
+    .nav-menu.tw-hidden { display: flex !important; }
+
     .nav-menu li {
         border-bottom: none;
     }
@@ -2039,6 +2045,17 @@ html[data-theme="dark"] .logo a { color: white; }
     .footer {
         background-color: #000;
     }
+}
+
+/* TEMP: minimal responsive utilities (temporary fallback until Tailwind build generates md:tw-* variants) */
+@media (min-width: 768px) {
+    .md\:tw-flex { display: flex; }
+    .md\:tw-hidden { display: none !important; }
+    .md\:tw-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .md\:tw-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .md\:tw-justify-end { justify-content: flex-end; }
+    .md\:tw-items-center { align-items: center; }
+    .md\:tw-col-span-2 { grid-column: span 2 / span 2; }
 }
 
 /* PRINT */

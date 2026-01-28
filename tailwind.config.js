@@ -16,19 +16,15 @@ module.exports = {
     preflight: false
   },
   safelist: [
-    { pattern: /^md:tw-/ },
-    { pattern: /^lg:tw-/ },
-    'md:tw-flex',
-    'md:tw-hidden',
-    'md:tw-grid-cols-2',
-    'md:tw-grid-cols-4',
-    'md:tw-justify-end',
-    'md:tw-items-center',
-    'md:tw-col-span-2',
-    'lg:tw-flex',
-    'lg:tw-grid',
-    { pattern: /^tw-hidden$/ },
-    { pattern: /^tw-flex$/ }
+    { pattern: /^tw-flex$/, variants: ['md'] },
+    { pattern: /^tw-hidden$/, variants: ['md'] },
+    { pattern: /^tw-grid-cols-2$/, variants: ['md'] },
+    { pattern: /^tw-grid-cols-4$/, variants: ['md'] },
+    { pattern: /^tw-justify-end$/, variants: ['md'] },
+    { pattern: /^tw-items-center$/, variants: ['md'] },
+    { pattern: /^tw-col-span-2$/, variants: ['md'] },
+    { pattern: /^tw-flex$/, variants: ['lg'] },
+    { pattern: /^tw-grid$/, variants: ['lg'] }
   ],
   theme: {
     extend: {}
