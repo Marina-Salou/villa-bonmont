@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Villa Bonmont - Tailwind PoC">
+  <title>Villa Bonmont — Tailwind PoC</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/tailwind.generated.css">
+</head>
+<body>
+  <!-- Header (Tailwind-based) -->
+  <header class="tw-bg-[rgba(255,255,255,0.6)] tw-backdrop-blur tw-sticky tw-top-0 tw-z-50 tw-border-b tw-border-[rgba(0,0,0,0.05)]">
+    <nav class="tw-max-w-[1400px] tw-mx-auto tw-px-6 tw-flex tw-items-center tw-justify-between tw-h-16" aria-label="Main navigation">
+      <a href="../index.html" class="tw-font-serif tw-text-2xl tw-text-[var(--color-primary)]">Villa Bonmont</a>
+
+      <div class="tw-flex tw-items-center">
+        <button id="themeToggle" class="theme-toggle tw-mr-4" aria-label="Cambiar tema">🌞</button>
+        <button id="menuToggle" class="menu-toggle tw-flex md:tw-hidden tw-flex-col tw-gap-1" aria-label="Toggle menu">
+          <span class="tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-origin-center tw-transition-transform tw-duration-200"></span>
+          <span class="tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-origin-center tw-transition-transform tw-duration-200"></span>
+          <span class="tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-origin-center tw-transition-transform tw-duration-200"></span>
+        </button>
+      </div>
+
+      <ul id="navMenu" class="nav-menu tw-hidden md:tw-flex tw-items-center tw-gap-6">
+        <li><a href="../index.html" class="tw-text-sm">Home</a></li>
+        <li><a href="./interiors.html" class="tw-text-sm">Interiors</a></li>
+        <li><a href="./about.html" class="tw-text-sm">About</a></li>
+        <li><a href="./equipamiento-bienestar.html" class="cta-link tw-bg-[var(--color-primary)] tw-text-white tw-rounded tw-px-4 tw-py-2">Reserve</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main class="tw-max-w-[1400px] tw-mx-auto tw-px-6">
+    <section class="tw-flex tw-items-center tw-justify-center tw-h-[60vh] tw-mt-8 tw-rounded tw-overflow-hidden" aria-label="Hero">
+      <img src="../images/exteriors/Pool/pool-1.webp" alt="Pool" class="tw-w-full tw-h-full tw-object-cover tw-opacity-95">
+      <div class="tw-absolute tw-z-10 tw-text-center tw-text-white tw-px-4">
+        <h1 class="tw-text-4xl tw-font-serif tw-font-light">Villa Bonmont Terres Noves</h1>
+        <p class="tw-mt-4 tw-text-lg">Luxury villa close to the Mediterranean</p>
+      </div>
+    </section>
+
+    <section class="tw-mt-12">
+      <h2 class="tw-text-2xl tw-font-semibold">Welcome</h2>
+      <p class="tw-mt-4">This is a Tailwind PoC page: header and basic layout recreated with Tailwind utilities.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="tw-bg-white tw-border-t tw-border-gray-100 tw-pt-8 tw-pb-8 tw-mt-12">
+    <div class="tw-max-w-[1400px] tw-mx-auto tw-px-4 tw-text-sm tw-text-gray-500 tw-text-center">© 2026 Villa Bonmont Terres Noves</div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
