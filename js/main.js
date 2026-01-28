@@ -3,71 +3,36 @@
    Navigation, Modal, and DOM Manipulation
    ============================================ */
 
-// Menu Toggle
+// Menu Toggle (Tailwind-first)
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 
 menuToggle.addEventListener('click', () => {
-    // keep .active for the button state
+    // animation helper (kept for transforms)
     menuToggle.classList.toggle('active');
-
-    // Support both Tailwind-based nav (tw-hidden/tw-flex) and legacy nav (.active)
-    const usesTw = navMenu.classList.contains('tw-hidden') || navMenu.classList.contains('tw-flex');
-    if (usesTw) {
-        navMenu.classList.toggle('tw-hidden');
-        navMenu.classList.toggle('tw-flex');
-    } else {
-        navMenu.classList.toggle('active');
-    }
-
-    // animate hamburger lines by toggling utility classes on spans
-    const spans = menuToggle.querySelectorAll('span');
-    const isActive = menuToggle.classList.contains('active');
-    if (isActive) {
-        spans[0].classList.add('tw-rotate-45','tw-translate-x-2','tw-translate-y-2');
-        spans[1].classList.add('tw-opacity-0');
-        spans[2].classList.add('tw--rotate-45','tw-translate-x-2','tw--translate-y-2');
-    } else {
-        spans[0].classList.remove('tw-rotate-45','tw-translate-x-2','tw-translate-y-2');
-        spans[1].classList.remove('tw-opacity-0');
-        spans[2].classList.remove('tw--rotate-45','tw-translate-x-2','tw--translate-y-2');
-    }
+    // toggle visibility on small screens using Tailwind utility
+    const isHidden = navMenu.classList.toggle('tw-hidden');
+    // update accessibility state
+    menuToggle.setAttribute('aria-expanded', String(!isHidden));
 });
 
 // Close menu when clicking on a link
 navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
-        const usesTw = navMenu.classList.contains('tw-hidden') || navMenu.classList.contains('tw-flex');
-        if (usesTw) {
-            navMenu.classList.add('tw-hidden');
-            navMenu.classList.remove('tw-flex');
-        } else {
-            navMenu.classList.remove('active');
-        }
-        // reset hamburger lines
-        const spans = menuToggle.querySelectorAll('span');
-        spans[0].classList.remove('tw-rotate-45','tw-translate-x-2','tw-translate-y-2');
-        spans[1].classList.remove('tw-opacity-0');
-        spans[2].classList.remove('tw--rotate-45','tw-translate-x-2','tw--translate-y-2');
+        // ensure hidden on small screens
+        navMenu.classList.add('tw-hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
     });
 });
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('.navbar')) {
+    // use semantic <nav> rather than legacy class
+    if (!e.target.closest('nav')) {
         menuToggle.classList.remove('active');
-        const usesTw = navMenu.classList.contains('tw-hidden') || navMenu.classList.contains('tw-flex');
-        if (usesTw) {
-            navMenu.classList.add('tw-hidden');
-            navMenu.classList.remove('tw-flex');
-        } else {
-            navMenu.classList.remove('active');
-        }
-        const spans = menuToggle.querySelectorAll('span');
-        spans[0].classList.remove('tw-rotate-45','tw-translate-x-2','tw-translate-y-2');
-        spans[1].classList.remove('tw-opacity-0');
-        spans[2].classList.remove('tw--rotate-45','tw-translate-x-2','tw--translate-y-2');
+        navMenu.classList.add('tw-hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
     }
 });
 
@@ -175,7 +140,7 @@ if ('IntersectionObserver' in window) {
 // Smooth scroll for internal links (already done by html { scroll-behavior: smooth; })
 // but add active state highlighting
 window.addEventListener('scroll', () => {
-    const nav = document.querySelectorAll('.nav-menu a');
+    const nav = document.querySelectorAll('#navMenu a');
     let current = '';
 
     document.querySelectorAll('section').forEach(section => {
@@ -186,15 +151,11 @@ window.addEventListener('scroll', () => {
     });
 
     nav.forEach(link => {
-        link.classList.remove('active');
+        // remove visual active classes (Tailwind only)
+        link.classList.remove('tw-font-semibold', 'tw-text-[var(--color-secondary)]');
         const href = link.getAttribute('href');
-        if (href.startsWith('#') && href.slice(1) === current) {
-            link.classList.add('active');
-        } else if (href.includes('#')) {
-            const id = href.split('#')[1];
-            if (id === current) {
-                link.classList.add('active');
-            }
+        if ((href && href.startsWith('#') && href.slice(1) === current) || (href && href.includes('#') && href.split('#')[1] === current)) {
+            link.classList.add('tw-font-semibold', 'tw-text-[var(--color-secondary)]');
         }
     });
 });
@@ -235,9 +196,8 @@ if (contactForm) {
 
 // Highlight current nav link based on URL (adds aria-current="page" and .active)
 function highlightCurrentNav() {
-    const links = document.querySelectorAll('.nav-menu a');
+    const links = document.querySelectorAll('#navMenu a');
     const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-    const activeClasses = ['tw-text-[var(--color-secondary)]','tw-font-semibold','tw-border-b','tw-border-[rgba(201,168,102,0.12)]'];
 
     links.forEach(link => {
         const href = link.getAttribute('href');
@@ -248,10 +208,11 @@ function highlightCurrentNav() {
             const linkPath = url.pathname.replace(/\/$/, '') || '/';
 
             if (linkPath === currentPath) {
-                link.classList.add(...activeClasses);
+                // Tailwind-only active state
+                link.classList.add('tw-font-semibold', 'tw-text-[var(--color-secondary)]');
                 link.setAttribute('aria-current', 'page');
             } else {
-                link.classList.remove(...activeClasses);
+                link.classList.remove('tw-font-semibold', 'tw-text-[var(--color-secondary)]');
                 if (link.getAttribute('aria-current') === 'page') link.removeAttribute('aria-current');
             }
         } catch (e) {
@@ -267,12 +228,12 @@ window.addEventListener('popstate', highlightCurrentNav);
 // Simple lightbox implementation
 (function() {
     const overlay = document.createElement('div');
-    overlay.className = 'lightbox-overlay tw-fixed tw-inset-0 tw-hidden tw-items-center tw-justify-center tw-bg-[rgba(0,0,0,0.85)] tw-z-[1000] tw-p-8';
+    overlay.className = 'lightbox-overlay';
     overlay.innerHTML = `
-        <button class="lightbox-close tw-absolute tw-top-4 tw-right-4 tw-bg-none tw-border-none tw-text-white tw-text-2xl" aria-label="Cerrar">&times;</button>
-        <div class="lightbox-content tw-max-w-[90%] tw-max-h-[90%] tw-flex tw-flex-col tw-gap-2 tw-items-center" role="dialog" aria-modal="true">
-            <img src="" alt="" class="tw-max-w-full tw-max-h-[80vh] tw-rounded">
-            <div class="lightbox-caption tw-text-white tw-text-sm tw-opacity-90"></div>
+        <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+        <div class="lightbox-content" role="dialog" aria-modal="true">
+            <img src="" alt="">
+            <div class="lightbox-caption"></div>
         </div>
     `;
     document.body.appendChild(overlay);
@@ -292,15 +253,11 @@ window.addEventListener('popstate', highlightCurrentNav);
         overlayImg.alt = link.querySelector('img')?.alt || '';
         overlayCaption.textContent = link.dataset.caption || '';
         overlay.classList.add('active');
-        overlay.classList.remove('tw-hidden');
-        overlay.classList.add('tw-flex');
         document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
         overlay.classList.remove('active');
-        overlay.classList.remove('tw-flex');
-        overlay.classList.add('tw-hidden');
         overlayImg.src = '';
         document.body.style.overflow = '';
     }
@@ -390,29 +347,6 @@ window.addEventListener('popstate', highlightCurrentNav);
 
     function applyTheme(theme){
         try{ document.documentElement.setAttribute('data-theme', theme); }catch(e){}
-        // replicate header/logo theme changes using Tailwind utilities so we can drop legacy CSS later
-        const headerEl = document.querySelector('.header');
-        const logoLink = document.querySelector('.logo a');
-        if (theme === 'dark') {
-            if (headerEl){
-                headerEl.classList.remove('tw-bg-[rgba(255,255,255,0.6)]','tw-backdrop-blur');
-                headerEl.classList.add('tw-bg-[var(--color-primary)]','tw-text-white');
-            }
-            if (logoLink){
-                logoLink.classList.remove('tw-text-[var(--color-primary)]');
-                logoLink.classList.add('tw-text-white');
-            }
-        } else {
-            if (headerEl){
-                headerEl.classList.remove('tw-bg-[var(--color-primary)]','tw-text-white');
-                headerEl.classList.add('tw-bg-[rgba(255,255,255,0.6)]','tw-backdrop-blur');
-            }
-            if (logoLink){
-                logoLink.classList.remove('tw-text-white');
-                logoLink.classList.add('tw-text-[var(--color-primary)]');
-            }
-        }
-
         if (btn){
             btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
             btn.textContent = theme === 'dark' ? '🌙' : '🌞';
