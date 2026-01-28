@@ -27,7 +27,12 @@ module.exports = {
     { pattern: /^tw-grid$/, variants: ['lg'] }
   ],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+        serif: ['var(--font-serif)']
+      }
+    }
   },
   plugins: []
 };
