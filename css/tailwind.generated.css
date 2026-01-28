@@ -1,1 +1,13 @@
 /*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
+.tw\:flex {
+  display: flex;
+}
+.tw\:hidden {
+  display: none;
+}
+.tw-tw\:flex {
+  display: flex;
+}
+.tw-tw\:hidden {
+  display: none;
+}

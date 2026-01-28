@@ -3,7 +3,7 @@
 // - Preflight disabled to avoid resetting existing styles in css/styles.css
 
 module.exports = {
-  prefix: 'tw',
+  prefix: 'tw-',
   mode: 'jit',
   content: [
     './*.html',
@@ -16,17 +16,15 @@ module.exports = {
     preflight: false
   },
   safelist: [
-    'md:tw:flex',
-    'md:tw:hidden',
-    'md:tw:grid-cols-2',
-    'md:tw:grid-cols-4',
-    'md:tw:justify-end',
-    'md:tw:items-center',
-    'md:tw:col-span-2',
-    'lg:tw:flex',
-    'lg:tw:grid',
-    'tw:hidden',
-    'tw:flex'
+    { pattern: /^tw-flex$/, variants: ['md'] },
+    { pattern: /^tw-hidden$/, variants: ['md'] },
+    { pattern: /^tw-grid-cols-2$/, variants: ['md'] },
+    { pattern: /^tw-grid-cols-4$/, variants: ['md'] },
+    { pattern: /^tw-justify-end$/, variants: ['md'] },
+    { pattern: /^tw-items-center$/, variants: ['md'] },
+    { pattern: /^tw-col-span-2$/, variants: ['md'] },
+    { pattern: /^tw-flex$/, variants: ['lg'] },
+    { pattern: /^tw-grid$/, variants: ['lg'] }
   ],
   theme: {
     extend: {}
