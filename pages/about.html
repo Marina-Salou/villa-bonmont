@@ -18,7 +18,7 @@
     <title>About Idoia | Villa Bonmont Terres Noves</title>
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link tw-absolute -tw-top-[40px] tw-left-0 tw-bg-[var(--color-primary)] tw-text-white tw-px-4 tw-py-2 tw-z-50 focus:tw-top-0">Skip to main content</a>
     
     <header class="header tw-bg-[rgba(255,255,255,0.6)] tw-backdrop-blur tw-sticky tw-top-0 tw-z-50 tw-border-b tw-border-[rgba(0,0,0,0.05)]" role="banner">
         <nav class="navbar tw-py-4" role="navigation" aria-label="Main navigation">
@@ -27,18 +27,18 @@
                 <div class="tw-flex tw-items-center">
                     <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false" title="Cambiar tema">🌞</button>
                     <button class="menu-toggle tw-flex md:tw-hidden tw-flex-col tw-gap-1" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span class="tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-transition tw-duration-200 tw-origin-center"></span>
+                        <span class="tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-transition tw-duration-200 tw-origin-center"></span>
+                        <span class="tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-transition tw-duration-200 tw-origin-center"></span>
                     </button>
                 </div>
-                <ul class="nav-menu tw-hidden md:tw-flex tw-items-center tw-gap-6" id="navMenu">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="./interiors.html">Interiors</a></li>
-                    <li><a href="./equipamiento-bienestar.html">Equipamiento y Bienestar</a></li>
-                    <li><a href="../index.html#lifestyle">Lifestyle</a></li>
-                    <li><a href="./about.html">About Idoia</a></li>
-                    <li><a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71" class="cta-link">Reserve</a></li>
+                <ul class="nav-menu tw-hidden md:tw-flex md:tw-static tw-items-center tw-gap-6 tw-absolute tw-top-[70px] tw-left-0 tw-right-0 tw-bg-white tw-flex-col tw-shadow-md md:tw-bg-transparent md:tw-shadow-none md:tw-flex-row md:tw-p-0" id="navMenu">
+                    <li><a href="../index.html" class="nav-link tw-block md:tw-inline-block tw-py-3 md:tw-p-0 tw-px-6 tw-text-[var(--color-text)] tw-uppercase tw-text-sm tw-tracking-[1px] hover:tw-text-[var(--color-secondary)]">Home</a></li>
+                    <li><a href="./interiors.html" class="nav-link tw-block md:tw-inline-block tw-py-3 md:tw-p-0 tw-px-6 tw-text-[var(--color-text)] tw-uppercase tw-text-sm tw-tracking-[1px] hover:tw-text-[var(--color-secondary)]">Interiors</a></li>
+                    <li><a href="./equipamiento-bienestar.html" class="nav-link tw-block md:tw-inline-block tw-py-3 md:tw-p-0 tw-px-6 tw-text-[var(--color-text)] tw-uppercase tw-text-sm tw-tracking-[1px] hover:tw-text-[var(--color-secondary)]">Equipamiento y Bienestar</a></li>
+                    <li><a href="../index.html#lifestyle" class="nav-link tw-block md:tw-inline-block tw-py-3 md:tw-p-0 tw-px-6 tw-text-[var(--color-text)] tw-uppercase tw-text-sm tw-tracking-[1px] hover:tw-text-[var(--color-secondary)]">Lifestyle</a></li>
+                    <li><a href="./about.html" class="nav-link tw-block md:tw-inline-block tw-py-3 md:tw-p-0 tw-px-6 tw-text-[var(--color-text)] tw-uppercase tw-text-sm tw-tracking-[1px] hover:tw-text-[var(--color-secondary)]">About Idoia</a></li>
+                    <li><a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71" class="cta-link tw-bg-[var(--color-primary)] tw-text-white tw-rounded tw-px-4 tw-py-2">Reserve</a></li>
                 </ul>
             </div>
         </nav>

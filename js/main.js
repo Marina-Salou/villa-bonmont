@@ -8,11 +8,24 @@ const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 
 menuToggle.addEventListener('click', () => {
-    // keep .active for the button's visual transform (CSS targets .menu-toggle.active)
+    // keep .active for the button state
     menuToggle.classList.toggle('active');
     // use Tailwind utilities for show/hide on mobile
     navMenu.classList.toggle('tw-hidden');
     navMenu.classList.toggle('tw-flex');
+
+    // animate hamburger lines by toggling utility classes on spans
+    const spans = menuToggle.querySelectorAll('span');
+    const isActive = menuToggle.classList.contains('active');
+    if (isActive) {
+        spans[0].classList.add('tw-rotate-45','tw-translate-x-2','tw-translate-y-2');
+        spans[1].classList.add('tw-opacity-0');
+        spans[2].classList.add('tw--rotate-45','tw-translate-x-2','tw--translate-y-2');
+    } else {
+        spans[0].classList.remove('tw-rotate-45','tw-translate-x-2','tw-translate-y-2');
+        spans[1].classList.remove('tw-opacity-0');
+        spans[2].classList.remove('tw--rotate-45','tw-translate-x-2','tw--translate-y-2');
+    }
 });
 
 // Close menu when clicking on a link
@@ -21,6 +34,11 @@ navMenu.querySelectorAll('a').forEach(link => {
         menuToggle.classList.remove('active');
         navMenu.classList.add('tw-hidden');
         navMenu.classList.remove('tw-flex');
+        // reset hamburger lines
+        const spans = menuToggle.querySelectorAll('span');
+        spans[0].classList.remove('tw-rotate-45','tw-translate-x-2','tw-translate-y-2');
+        spans[1].classList.remove('tw-opacity-0');
+        spans[2].classList.remove('tw--rotate-45','tw-translate-x-2','tw--translate-y-2');
     });
 });
 
@@ -30,6 +48,10 @@ document.addEventListener('click', (e) => {
         menuToggle.classList.remove('active');
         navMenu.classList.add('tw-hidden');
         navMenu.classList.remove('tw-flex');
+        const spans = menuToggle.querySelectorAll('span');
+        spans[0].classList.remove('tw-rotate-45','tw-translate-x-2','tw-translate-y-2');
+        spans[1].classList.remove('tw-opacity-0');
+        spans[2].classList.remove('tw--rotate-45','tw-translate-x-2','tw--translate-y-2');
     }
 });
 
@@ -199,6 +221,7 @@ if (contactForm) {
 function highlightCurrentNav() {
     const links = document.querySelectorAll('.nav-menu a');
     const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+    const activeClasses = ['tw-text-[var(--color-secondary)]','tw-font-semibold','tw-border-b','tw-border-[rgba(201,168,102,0.12)]'];
 
     links.forEach(link => {
         const href = link.getAttribute('href');
@@ -209,10 +232,10 @@ function highlightCurrentNav() {
             const linkPath = url.pathname.replace(/\/$/, '') || '/';
 
             if (linkPath === currentPath) {
-                link.classList.add('active');
+                link.classList.add(...activeClasses);
                 link.setAttribute('aria-current', 'page');
             } else {
-                link.classList.remove('active');
+                link.classList.remove(...activeClasses);
                 if (link.getAttribute('aria-current') === 'page') link.removeAttribute('aria-current');
             }
         } catch (e) {
@@ -347,6 +370,29 @@ window.addEventListener('popstate', highlightCurrentNav);
 
     function applyTheme(theme){
         try{ document.documentElement.setAttribute('data-theme', theme); }catch(e){}
+        // replicate header/logo theme changes using Tailwind utilities so we can drop legacy CSS later
+        const headerEl = document.querySelector('.header');
+        const logoLink = document.querySelector('.logo a');
+        if (theme === 'dark') {
+            if (headerEl){
+                headerEl.classList.remove('tw-bg-[rgba(255,255,255,0.6)]','tw-backdrop-blur');
+                headerEl.classList.add('tw-bg-[var(--color-primary)]','tw-text-white');
+            }
+            if (logoLink){
+                logoLink.classList.remove('tw-text-[var(--color-primary)]');
+                logoLink.classList.add('tw-text-white');
+            }
+        } else {
+            if (headerEl){
+                headerEl.classList.remove('tw-bg-[var(--color-primary)]','tw-text-white');
+                headerEl.classList.add('tw-bg-[rgba(255,255,255,0.6)]','tw-backdrop-blur');
+            }
+            if (logoLink){
+                logoLink.classList.remove('tw-text-white');
+                logoLink.classList.add('tw-text-[var(--color-primary)]');
+            }
+        }
+
         if (btn){
             btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
             btn.textContent = theme === 'dark' ? '🌙' : '🌞';
