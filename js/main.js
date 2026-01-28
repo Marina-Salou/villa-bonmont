@@ -14,6 +14,19 @@ menuToggle.addEventListener('click', () => {
     const isHidden = navMenu.classList.toggle('tw-hidden');
     // update accessibility state
     menuToggle.setAttribute('aria-expanded', String(!isHidden));
+
+    // animate hamburger -> X using Tailwind utilities toggled on spans
+    const spans = Array.from(menuToggle.querySelectorAll('span'));
+    if (spans.length === 3) {
+        // top
+        spans[0].classList.toggle('tw-translate-y-1');
+        spans[0].classList.toggle('tw-rotate-45');
+        // middle
+        spans[1].classList.toggle('tw-opacity-0');
+        // bottom
+        spans[2].classList.toggle('-tw-translate-y-1');
+        spans[2].classList.toggle('-tw-rotate-45');
+    }
 });
 
 // Close menu when clicking on a link
