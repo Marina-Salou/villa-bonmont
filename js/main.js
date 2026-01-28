@@ -10,9 +10,15 @@ const navMenu = document.getElementById('navMenu');
 menuToggle.addEventListener('click', () => {
     // keep .active for the button state
     menuToggle.classList.toggle('active');
-    // use Tailwind utilities for show/hide on mobile
-    navMenu.classList.toggle('tw-hidden');
-    navMenu.classList.toggle('tw-flex');
+
+    // Support both Tailwind-based nav (tw-hidden/tw-flex) and legacy nav (.active)
+    const usesTw = navMenu.classList.contains('tw-hidden') || navMenu.classList.contains('tw-flex');
+    if (usesTw) {
+        navMenu.classList.toggle('tw-hidden');
+        navMenu.classList.toggle('tw-flex');
+    } else {
+        navMenu.classList.toggle('active');
+    }
 
     // animate hamburger lines by toggling utility classes on spans
     const spans = menuToggle.querySelectorAll('span');
@@ -32,8 +38,13 @@ menuToggle.addEventListener('click', () => {
 navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
-        navMenu.classList.add('tw-hidden');
-        navMenu.classList.remove('tw-flex');
+        const usesTw = navMenu.classList.contains('tw-hidden') || navMenu.classList.contains('tw-flex');
+        if (usesTw) {
+            navMenu.classList.add('tw-hidden');
+            navMenu.classList.remove('tw-flex');
+        } else {
+            navMenu.classList.remove('active');
+        }
         // reset hamburger lines
         const spans = menuToggle.querySelectorAll('span');
         spans[0].classList.remove('tw-rotate-45','tw-translate-x-2','tw-translate-y-2');
@@ -46,8 +57,13 @@ navMenu.querySelectorAll('a').forEach(link => {
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.navbar')) {
         menuToggle.classList.remove('active');
-        navMenu.classList.add('tw-hidden');
-        navMenu.classList.remove('tw-flex');
+        const usesTw = navMenu.classList.contains('tw-hidden') || navMenu.classList.contains('tw-flex');
+        if (usesTw) {
+            navMenu.classList.add('tw-hidden');
+            navMenu.classList.remove('tw-flex');
+        } else {
+            navMenu.classList.remove('active');
+        }
         const spans = menuToggle.querySelectorAll('span');
         spans[0].classList.remove('tw-rotate-45','tw-translate-x-2','tw-translate-y-2');
         spans[1].classList.remove('tw-opacity-0');
