@@ -11,21 +11,7 @@
   <!-- Fuentes para réplica visual exacta -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --color-primary: #1a1a1a;
-      --color-secondary: #c9a866;
-      --color-light: #f9f9f9;
-      --color-border: #e5e5e5;
-      --font-serif: 'Crimson Text', serif;
-      --font-sans: 'Poppins', sans-serif;
-    }
-    body{ font-family: var(--font-sans); }
-    .logo a{ font-family: var(--font-serif); }
-    /* Small helper to make demo content readable */
-    .doc { max-width: 900px; margin: 3rem auto; padding: 1rem; }
-    pre.code { background:#f8f8f8; padding:1rem; overflow:auto; }
-  </style>
+  <!-- Fonts loaded via <link>; spacing and helpers use Tailwind utilities (no inline CSS variables) -->
 </head>
 <body class="tw-antialiased">
 
@@ -33,7 +19,7 @@
   <a href="#main" class="skip-link">Ir al contenido principal</a>
 
   <!-- Header (implementación según docs/style-guide/components/header.md) -->
-  <header class="tw-bg-white/60 tw-backdrop-blur-[10px] tw-border-b tw-border-[rgba(0,0,0,0.05)] tw-sticky tw-top-0 tw-z-50" role="banner">
+  <header class="tw-bg-white/60 tw-backdrop-blur-header tw-border-b tw-border-border tw-sticky tw-top-0 tw-z-50" role="banner">
     <nav class="tw-w-full" role="navigation" aria-label="Main navigation">
       <div class="tw-max-w-[1400px] tw-mx-auto tw-px-[1rem] tw-py-[1.5rem] tw-flex tw-justify-between tw-items-center">
 
@@ -44,18 +30,18 @@
         <button id="themeToggle" class="theme-toggle tw-ml-4 md:tw-inline-flex tw-hidden" aria-label="Cambiar tema" aria-pressed="false" title="Cambiar tema">🌞</button>
 
         <button id="menuToggle" class="menu-toggle md:tw-hidden tw-flex tw-flex-col tw-gap-[5px] tw-bg-transparent tw-p-[0.5rem]" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
-          <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-transition-all tw-duration-300 tw-ease-in-out"></span>
-          <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-transition-all tw-duration-300 tw-ease-in-out"></span>
-          <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)] tw-transition-all tw-duration-300 tw-ease-in-out"></span>
+          <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-primary tw-transition-all tw-duration-300 tw-ease-in-out"></span>
+          <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-primary tw-transition-all tw-duration-300 tw-ease-in-out"></span>
+          <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-primary tw-transition-all tw-duration-300 tw-ease-in-out"></span>
         </button>
 
         <ul id="navMenu" class="nav-menu tw-list-none tw-p-0 tw-m-0 tw-hidden md:tw-flex tw-gap-[1rem] tw-items-center" role="menubar">
           <li role="none"><a role="menuitem" href="#hero" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-font-[500] focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-secondary hover:tw-bg-black/5 hover:tw-text-secondary">Inicio</a></li>
-          <li role="none"><a role="menuitem" href="pages/interiors.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-font-[500] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Interiores</a></li>
-          <li role="none"><a role="menuitem" href="pages/exteriors.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-font-[500] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Exteriores</a></li>
-          <li role="none"><a role="menuitem" href="pages/equipamiento-bienestar.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-font-[500] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Equipamiento y Bienestar</a></li>
-          <li role="none"><a role="menuitem" href="#lifestyle" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-font-[500] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Estilo de vida</a></li>
-          <li role="none"><a role="menuitem" href="pages/about.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-font-[500] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">La anfitriona</a></li>
+          <li role="none"><a role="menuitem" href="pages/interiors.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-font-[500] hover:tw-bg-light hover:tw-text-secondary">Interiores</a></li>
+          <li role="none"><a role="menuitem" href="pages/exteriors.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-font-[500] hover:tw-bg-light hover:tw-text-secondary">Exteriores</a></li>
+          <li role="none"><a role="menuitem" href="pages/equipamiento-bienestar.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-font-[500] hover:tw-bg-light hover:tw-text-secondary">Equipamiento y Bienestar</a></li>
+          <li role="none"><a role="menuitem" href="#lifestyle" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-font-[500] hover:tw-bg-light hover:tw-text-secondary">Estilo de vida</a></li>
+          <li role="none"><a role="menuitem" href="pages/about.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-font-[500] hover:tw-bg-light hover:tw-text-secondary">La anfitriona</a></li>
           <li role="none"><a role="menuitem" href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71" class="cta-link tw-no-underline tw-text-inherit tw-bg-primary tw-text-white tw-py-[1rem] tw-px-[2rem] tw-uppercase tw-tracking-[1.5px] tw-font-[600]">Reservar</a></li>
         </ul>
       </div>
@@ -63,13 +49,13 @@
 
     <!-- Menú móvil (absolute, debajo del header) -->
     <ul id="nav-menu" class="nav-menu tw-list-none tw-p-0 tw-m-0 tw-hidden tw-absolute tw-top-[70px] tw-left-0 tw-right-0 tw-bg-white tw-flex tw-flex-col tw-shadow-md" role="menu" aria-label="Menú principal">
-      <li class="tw-border-b tw-border-[var(--color-border)]"><a href="#hero" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase tw-text-[0.9rem] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Inicio</a></li>
-      <li class="tw-border-b tw-border-[var(--color-border)]"><a href="pages/interiors.html" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Interiores</a></li>
-      <li class="tw-border-b tw-border-[var(--color-border)]"><a href="pages/exteriors.html" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Exteriores</a></li>
-      <li class="tw-border-b tw-border-[var(--color-border)]"><a href="pages/equipamiento-bienestar.html" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Equipamiento y Bienestar</a></li>
-      <li class="tw-border-b tw-border-[var(--color-border)]"><a href="#lifestyle" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Estilo de vida</a></li>
-      <li class="tw-border-b tw-border-[var(--color-border)]"><a href="pages/about.html" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">La anfitriona</a></li>
-      <li><a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase tw-bg-[var(--color-primary)] tw-text-white tw-m-[1rem] tw-inline-block">Reservar</a></li>
+      <li class="tw-border-b tw-border-border"><a href="#hero" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase tw-text-[0.9rem] hover:tw-bg-light hover:tw-text-secondary">Inicio</a></li>
+      <li class="tw-border-b tw-border-border"><a href="pages/interiors.html" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase hover:tw-bg-light hover:tw-text-secondary">Interiores</a></li>
+      <li class="tw-border-b tw-border-border"><a href="pages/exteriors.html" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase hover:tw-bg-light hover:tw-text-secondary">Exteriores</a></li>
+      <li class="tw-border-b tw-border-border"><a href="pages/equipamiento-bienestar.html" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase hover:tw-bg-light hover:tw-text-secondary">Equipamiento y Bienestar</a></li>
+      <li class="tw-border-b tw-border-border"><a href="#lifestyle" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase hover:tw-bg-light hover:tw-text-secondary">Estilo de vida</a></li>
+      <li class="tw-border-b tw-border-border"><a href="pages/about.html" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase hover:tw-bg-light hover:tw-text-secondary">La anfitriona</a></li>
+      <li><a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71" role="menuitem" class="tw-no-underline tw-text-inherit tw-block tw-py-[1.5rem] tw-px-[1rem] tw-uppercase tw-bg-primary tw-text-white tw-m-[1rem] tw-inline-block">Reservar</a></li>
     </ul>
   </header>
 
@@ -78,7 +64,7 @@
     <section class="tw-max-w-[900px] tw-mx-auto tw-px-[1rem]">
       <h1 class="tw-text-3xl tw-mt-8">Prueba del Header (Tailwind)</h1>
       <p class="tw-mt-4">Esta página muestra únicamente la réplica del header implementada según <code>docs/style-guide/components/header.md</code>. Usa el toggle en móvil y prueba el scroll para verificar el fondo semitransparente y el blur.</p>
-      <div style="height:1200px"></div>
+      <div class="tw-h-[1200px]"></div>
     </section>
   </main>
 
@@ -135,3 +121,4 @@
   </script>
 </body>
 </html>
+

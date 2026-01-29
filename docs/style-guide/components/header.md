@@ -44,15 +44,15 @@ Componente responsivo que contiene: logo, navegación, botón de menú (mobile) 
 - Logo
   - Fuente: `var(--font-serif)` (`Crimson Text`) o `Libre Bodoni` si buscas la versión hero.
   - Tamaño: **1.5rem** (aprox. 24px).
-  - Peso: `400` (normal), color: `var(--color-primary)`.
+  - Peso: `400` (normal), color: token `primary` (use `tw-text-primary`).
 - Enlaces de navegación (desktop + mobile)
   - Texto: **uppercase** (`text-transform: uppercase`).
   - Tamaño: **0.9rem**.
   - Espaciado: **letter-spacing: 1px**.
   - Peso normal: `500` para enlaces regulares, `600` para el enlace activo/CTA.
-  - Hover: fondo `var(--color-light)` y color `var(--color-secondary)`.
+  - Hover: fondo token `light` (`#f9f9f9`) (use `hover:tw-bg-light`) y color token `secondary` (use `hover:tw-text-secondary`).
 - CTA (Reservar)
-  - Fondo: `var(--color-primary)`.
+  - Fondo: token `primary` (use `tw-bg-primary`).
   - Color texto: blanco.
   - Padding: `var(--spacing-sm)` vertical x `var(--spacing-lg)` horizontal (aprox. `1rem` x `2rem`).
   - Texto: uppercase, letter-spacing `1.5px`, font-weight `600`.
@@ -64,7 +64,7 @@ Componente responsivo que contiene: logo, navegación, botón de menú (mobile) 
 - Espaciado interior del contenedor: `padding-left/right: 1rem` (`tw-px-[1rem]`).
 - Alto del botón toggle: tres barras `25px` x `3px`, gap `5px`.
 - Offset del menú móvil respecto al top del viewport: `70px` (`top: 70px`).
-- Separadores del menú móvil: `border-bottom: 1px solid var(--color-border)` y el último elemento sin borde.
+- Separadores del menú móvil: `border-bottom: 1px solid` token `border` (use `tw-border-b tw-border-border`) y el último elemento sin borde.
 
 ---
 
@@ -77,7 +77,7 @@ Componente responsivo que contiene: logo, navegación, botón de menú (mobile) 
   - `.menu-toggle.active span:nth-child(3)` → `transform: rotate(-45deg) translate(7px, -7px)`
   - Transitions deben usar `all 0.3s ease`.
 - Enlace activo / página actual:
-  - Color: `var(--color-secondary)`.
+  - Color: token `secondary` (use `tw-text-secondary`).
   - Peso: `600`.
   - Subrayado sutil: `border-bottom: 2px solid rgba(201,168,102,0.12)` y `padding-bottom: calc(1.5rem - 0.15rem)`.
 
@@ -87,7 +87,7 @@ Componente responsivo que contiene: logo, navegación, botón de menú (mobile) 
 - Botón del menú: incluir `aria-expanded="false"` por defecto y actualizarlo a `true` cuando el menú esté visible.
 - Añadir `aria-controls="#nav-menu"` y `aria-label="Abrir menú"`.
 - Cada enlace puede llevar `aria-current="page"` cuando corresponde.
-- Focus visible: usar `tw-ring-2 tw-ring-offset-2 tw-ring-[var(--color-secondary)]` o un `outline` visible cuando el elemento recibe foco.
+- Focus visible: usar `tw-ring-2 tw-ring-offset-2 focus:tw-ring-secondary` o un `outline` visible cuando el elemento recibe foco.
 - Preferencia de movimiento reducida: respetar `prefers-reduced-motion` y eliminar/atenuar las transiciones y transformaciones.
 
 ---
@@ -101,13 +101,13 @@ Componente responsivo que contiene: logo, navegación, botón de menú (mobile) 
 ## Claves Tailwind (mapeo directo) 📘
 - Header: `tw-bg-white/60 tw-backdrop-blur-md tw-border-b tw-border-black/5 tw-sticky tw-top-0 tw-z-50`
 - Contenedor: `tw-max-w-[1400px] tw-mx-auto tw-px-[1rem] tw-py-[1.5rem] tw-flex tw-justify-between tw-items-center`
-- Logo: `tw-font-serif tw-text-[1.5rem] tw-text-[var(--color-primary)]`
+- Logo: `tw-font-serif tw-text-logo tw-text-primary`
 - Nav desktop: `md:tw-flex tw-hidden tw-gap-[1rem]` + enlaces `tw-uppercase tw-text-[0.9rem] tw-tracking-[1px]`
 - Toggle móvil: `md:tw-hidden tw-flex tw-flex-col tw-gap-[5px] tw-bg-transparent tw-p-[0.5rem]`
 - Menú móvil oculto: `tw-hidden`; visible: `tw-flex tw-flex-col tw-absolute tw-top-[70px] tw-left-0 tw-right-0 tw-bg-white tw-shadow-md`
 - Nota de reset: las listas de navegación deben llevar `tw-list-none tw-p-0 tw-m-0` y los enlaces `tw-no-underline tw-text-inherit` para evitar estilos por defecto del navegador.
 - Nota de JIT/arbitrary values: cuando el diseño original no encaje con la escala predeterminada de Tailwind (espaciados de 4 en 4), **usar valores arbitrarios JIT entre corchetes** (por ejemplo `tw-top-[70px]`, `tw-w-[25px]`, `tw-py-[1.5rem]`). Documenta cada uso y prefiere tokens (`design-tokens.json`) si se reutiliza en varios lugares.
-- Enlace activo: `tw-text-[var(--color-secondary)] tw-font-semibold tw-border-b tw-border-[rgba(201,168,102,0.12)] tw-pb-[calc(1.5rem-0.15rem)]`
+- Enlace activo: `tw-text-secondary tw-font-semibold tw-border-b tw-border-[rgba(201,168,102,0.12)] tw-pb-[calc(1.5rem-0.15rem)]`
 
 ---
 
@@ -146,7 +146,7 @@ Todos los valores mostrados en esta tabla han sido extraídos literalmente de `c
 | Header | Backdrop blur | `10px` | `tw-backdrop-blur-md` (o `tw-backdrop-blur-[10px]`) |
 | Header | Border-bottom | `1px solid rgba(0,0,0,0.05)` | `tw-border-b tw-border-black/5` |
 | Menú móvil | Offset top | `70px` | `tw-top-[70px]` |
-| Menú móvil | Separadores | `1px solid var(--color-border)` | `tw-border-b tw-border-[var(--color-border)]` |
+| Menú móvil | Separadores | `1px solid rgba(0,0,0,0.05)` | `tw-border-b tw-border-border` |
 | Menú móvil | Sombra | `0 4px 16px rgba(0,0,0,0.15)` | `tw-shadow-md` |
 | Toggle (barra) | Tamaño | `25px × 3px` | `tw-w-[25px] tw-h-[3px]` |
 | Toggle | Gap | `5px` | `tw-gap-[5px]` |
@@ -156,9 +156,9 @@ Todos los valores mostrados en esta tabla han sido extraídos literalmente de `c
 | Toggle (abrir) | Transformación 3ª barra | `rotate(-45deg) translate(7px, -7px)` | aplicar por JS / inline style |
 | CTA (Reservar) | Padding | `~1rem (v) × 2rem (h)` | `tw-py-[1rem] tw-px-[2rem]` |
 | CTA | Letter-spacing | `1.5px` | `tw-tracking-[1.5px]` |
-| Enlace activo | Color | `#c9a866` | `tw-text-[var(--color-secondary)]` |
+| Enlace activo | Color | `#c9a866` | `tw-text-secondary` |
 | Enlace activo | Subrayado | `2px solid rgba(201,168,102,0.12)` | `tw-border-b tw-border-[rgba(201,168,102,0.12)] tw-pb-[calc(1.5rem-0.15rem)]` |
-| Focus | Ring | `ring-2 + ring-offset-2` color `var(--color-secondary)` | `focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-[var(--color-secondary)]` |
+| Focus | Ring | `ring-2 + ring-offset-2` color `#c9a866` | `focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-secondary` |
 | Motion | Prefers-reduced-motion | `reduce` → desactivar transiciones | JS: `window.matchMedia('(prefers-reduced-motion: reduce)')` |
 
 ---
