@@ -28,9 +28,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: '#1a1a1a',
+        secondary: '#c9a866',
+        border: 'rgba(0,0,0,0.05)'
+      },
       fontFamily: {
-        sans: ['var(--font-sans)'],
-        serif: ['var(--font-serif)']
+        sans: ['ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','Helvetica','Arial'],
+        serif: ['Crimson Text','serif']
       }
     }
   },
