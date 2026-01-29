@@ -57,15 +57,17 @@ if (modalClose) {
         document.body.style.overflow = '';
     });
 }
-videoModal.addEventListener('click', (e) => {
-    if (e.target === videoModal) {
-        videoModal.classList.remove('active');
-        videoModal.setAttribute('aria-hidden', 'true');
-        modalVideo.pause();
-        modalVideo.currentTime = 0;
-        document.body.style.overflow = '';
-    }
-});
+if (videoModal) {
+    videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+            videoModal.classList.remove('active');
+            videoModal.setAttribute('aria-hidden', 'true');
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+            document.body.style.overflow = '';
+        }
+    });
+}
 
 // Outdoor modal
 if (outdoorModalBtn) {
@@ -85,27 +87,29 @@ if (outdoorModalClose) {
         document.body.style.overflow = '';
     });
 }
-outdoorVideoModal.addEventListener('click', (e) => {
-    if (e.target === outdoorVideoModal) {
-        outdoorVideoModal.classList.remove('active');
-        outdoorVideoModal.setAttribute('aria-hidden', 'true');
-        outdoorModalVideo.pause();
-        outdoorModalVideo.currentTime = 0;
-        document.body.style.overflow = '';
-    }
-});
+if (outdoorVideoModal) {
+    outdoorVideoModal.addEventListener('click', (e) => {
+        if (e.target === outdoorVideoModal) {
+            outdoorVideoModal.classList.remove('active');
+            outdoorVideoModal.setAttribute('aria-hidden', 'true');
+            outdoorModalVideo.pause();
+            outdoorModalVideo.currentTime = 0;
+            document.body.style.overflow = '';
+        }
+    });
+}
 
 // Keyboard: ESC to close either modal
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        if (videoModal.classList.contains('active')) {
+        if (videoModal && videoModal.classList.contains('active')) {
             videoModal.classList.remove('active');
             videoModal.setAttribute('aria-hidden', 'true');
             modalVideo.pause();
             modalVideo.currentTime = 0;
             document.body.style.overflow = '';
         }
-        if (outdoorVideoModal.classList.contains('active')) {
+        if (outdoorVideoModal && outdoorVideoModal.classList.contains('active')) {
             outdoorVideoModal.classList.remove('active');
             outdoorVideoModal.setAttribute('aria-hidden', 'true');
             outdoorModalVideo.pause();

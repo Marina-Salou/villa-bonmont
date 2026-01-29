@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Header prototype — Tailwind CDN (tw-)</title>
+
+  <!-- Tailwind CDN config: use 'tw-' prefix -->
+  <script>tailwind = {config: { prefix: 'tw-' }};</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts + CSS vars -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Skip to content -->
+  <a href="#main" class="skip-link">Ir al contenido principal</a>
+
+  <header class="tw-bg-white/60 tw-backdrop-blur-md tw-border-b tw-border-border tw-sticky tw-top-0 tw-z-50" role="banner">
+    <nav class="tw-w-full" role="navigation" aria-label="Main navigation">
+      <div class="tw-max-w-[1400px] tw-mx-auto tw-px-[1rem] tw-py-[1.5rem] tw-flex tw-justify-between tw-items-center navbar-container">
+
+        <div class="logo">
+          <a href="#hero" aria-label="Villa Bonmont home" class="tw-font-serif tw-text-[1.5rem] tw-text-primary tw-font-normal">Villa Bonmont Terres Noves</a>
+        </div>
+
+        <!-- Theme toggle (decorative for prototype) -->
+        <button id="themeToggle" class="theme-toggle tw-ml-4 tw-hidden md:tw-inline-flex" aria-label="Cambiar tema" aria-pressed="false" title="Cambiar tema">🌞</button>
+
+        <!-- Menu toggle (mobile) -->
+        <button id="menuToggle" class="menu-toggle md:tw-hidden tw-flex tw-flex-col tw-gap-[5px] tw-bg-transparent tw-p-[0.5rem]" aria-label="Abrir menú" aria-controls="navMenu" aria-expanded="false">
+          <span class="tw-w-[25px] tw-h-[3px] tw-bg-primary tw-transition-all tw-duration-300 tw-ease-in-out"></span>
+          <span class="tw-w-[25px] tw-h-[3px] tw-bg-primary tw-transition-all tw-duration-300 tw-ease-in-out"></span>
+          <span class="tw-w-[25px] tw-h-[3px] tw-bg-primary tw-transition-all tw-duration-300 tw-ease-in-out"></span>
+        </button>
+
+        <!-- Navigation (desktop + mobile) -->
+        <ul id="navMenu" class="nav-menu tw-list-none tw-p-0 tw-m-0 tw-hidden tw-absolute tw-top-[70px] tw-left-0 tw-right-0 tw-bg-white tw-shadow-md tw-flex-col md:tw-flex md:tw-static md:tw-top-auto md:tw-left-auto md:tw-right-auto md:tw-bg-transparent md:tw-shadow-none md:tw-flex-row tw-gap-[1rem] tw-items-center">
+
+          <li class="tw-border-b tw-border-border last:tw-border-b-0 md:tw-border-0"><a href="#hero" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-py-[1rem] tw-px-[1rem] md:tw-p-0 focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-secondary">Inicio</a></li>
+          <li class="tw-border-b tw-border-border last:tw-border-b-0 md:tw-border-0"><a href="pages/interiors.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-py-[1rem] tw-px-[1rem] md:tw-p-0 focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-secondary">Interiores</a></li>
+          <li class="tw-border-b tw-border-border last:tw-border-b-0 md:tw-border-0"><a href="pages/exteriors.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-py-[1rem] tw-px-[1rem] md:tw-p-0 focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-secondary">Exteriores</a></li>
+          <li class="tw-border-b tw-border-border last:tw-border-b-0 md:tw-border-0"><a href="pages/equipamiento-bienestar.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-py-[1rem] tw-px-[1rem] md:tw-p-0 focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-secondary">Equipamiento y Bienestar</a></li>
+          <li class="tw-border-b tw-border-border last:tw-border-b-0 md:tw-border-0"><a href="#lifestyle" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-py-[1rem] tw-px-[1rem] md:tw-p-0 focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-secondary">Estilo de vida</a></li>
+          <li class="tw-border-b tw-border-border last:tw-border-b-0 md:tw-border-0"><a href="pages/about.html" class="tw-no-underline tw-text-inherit tw-uppercase tw-text-[0.9rem] tw-tracking-[1px] tw-py-[1rem] tw-px-[1rem] md:tw-p-0 focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-secondary">La anfitriona</a></li>
+
+          <li class="tw-border-b tw-border-border last:tw-border-b-0 md:tw-border-0">
+            <a href="https://www.airbnb.es/rooms/42616703?adults=10&search_mode=regular_search&check_in=2026-01-19&check_out=2026-01-24&children=0&infants=0&pets=0&source_impression_id=p3_1768815143_P3CsUepaBeTYUavQ&previous_page_section_name=1000&federated_search_id=e14b4184-f013-4e0a-95b9-7d03d874fa71" class="cta-link tw-bg-primary tw-text-white tw-uppercase tw-py-[1rem] tw-px-[2rem] tw-tracking-[1.5px] tw-font-semibold tw-no-underline tw-text-inherit tw-rounded focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-secondary">Reservar</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="demo-content">Contenido de prueba — desplázate para ver el comportamiento sticky.</section>
+  </main>
+
+  <script>
+    (function(){
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+
+      const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function openMenu(){
+        menuToggle.setAttribute('aria-expanded','true');
+        menuToggle.classList.add('tw-active');
+        // show menu
+        navMenu.classList.remove('tw-hidden');
+        navMenu.classList.add('tw-flex');
+      }
+
+      function closeMenu(){
+        menuToggle.setAttribute('aria-expanded','false');
+        menuToggle.classList.remove('tw-active');
+        navMenu.classList.add('tw-hidden');
+        navMenu.classList.remove('tw-flex');
+      }
+
+      menuToggle.addEventListener('click', function(e){
+        const opened = menuToggle.getAttribute('aria-expanded') === 'true';
+        if(opened){ closeMenu(); } else { openMenu(); }
+      });
+
+      // Close on escape
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') closeMenu();
+      });
+
+      // Click outside to close (only when menu visible and on mobile widths)
+      document.addEventListener('click', function(e){
+        if(navMenu.classList.contains('tw-hidden')) return; // not open
+        const withinNav = navMenu.contains(e.target) || menuToggle.contains(e.target);
+        if(!withinNav) closeMenu();
+      });
+
+      // Respect reduced motion: don't animate transforms if user prefers reduced motion
+      if(isReduced){
+        // remove transition classes from spans
+        const spans = menuToggle.querySelectorAll('span');
+        spans.forEach(s=> s.classList.remove('tw-transition-all','tw-duration-300','tw-ease-in-out'));
+      }
+
+      // Ensure last-child separators are correct (works with tailwind last: variant but keep here as safety)
+      // Already implemented with last:tw-border-b-0 on <li>
+
+      // Optional: set aria-current for the 'Inicio' link as an example
+      const homeLink = navMenu.querySelector('a[href="#hero"]');
+      if(homeLink) homeLink.setAttribute('aria-current','page');
+    })();
+  </script>
+
+</body>
+</html>

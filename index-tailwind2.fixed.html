@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Villa Bonmont Terres Noves: Una lujosa villa privada de 600 m² en la Costa Dorada.">
+    <link rel="canonical" href="https://villabonmont.com/">
+
+    <!-- Fonts (kept) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Crimson+Text:ital@0;1&family=Libre+Bodoni:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- ONLY Tailwind utilities (no legacy CSS) -->
+    <link rel="stylesheet" href="css/tailwind.generated.css">
+
+    <style>
+    :root {
+      --color-primary: #1a1a1a;
+      --color-secondary: #c9a866;
+      --font-serif: 'Crimson Text', serif;
+    }
+    /* Theme mapping for header */
+    html[data-theme="dark"] .tw-header { background-color: var(--color-primary); color: white; }
+    html[data-theme="light"] .tw-header { background-color: rgba(255,255,255,0.6); color: var(--color-primary); }
+    /* Theme toggle focus / hover */
+    .theme-toggle:focus { outline: 2px dashed var(--color-secondary); outline-offset: 2px; }
+    .theme-toggle:hover { background: rgba(0,0,0,0.03); }
+    .theme-toggle[aria-pressed="true"] { background: rgba(0,0,0,0.06); }
+    /* Mobile menu toggle transitions / active state */
+    .menu-toggle span { transition: transform .3s ease, opacity .3s ease; display: block; }
+    .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+    /* Serif helper class using the same font as original */
+    .tw-font-serif { font-family: var(--font-serif); }
+
+    /* Small local rules to match original header behavior without relying on legacy CSS */
+    /* Hamburger bar size + transition */
+    .menu-toggle { padding: 0.5rem; background: none; border: none; }
+    .menu-toggle span { width: 25px; height: 3px; background-color: var(--color-primary); display: block; }
+
+    /* Mobile menu item borders and spacing emulate .nav-menu in legacy CSS */
+    .nav-menu a { transition: var(--transition); }
+    .nav-menu li { border-bottom: 1px solid #e5e5e5; }
+    .nav-menu li:last-child { border-bottom: none; }
+
+    /* Active / current page state for nav links (tiny rule, local only) */
+    .nav-menu a.active, .nav-menu a[aria-current="page"] {
+        color: var(--color-secondary);
+        font-weight: 600;
+        padding-bottom: calc(1.5rem - 0.15rem);
+        border-bottom: 2px solid rgba(201,168,102,0.12);
+    }
+    </style>
+
+    <title>Villa Bonmont — Cabecera (Tailwind only)</title>
+</head>
+<body class="tw-font-sans">
+    <!-- Accessible skip link styled with Tailwind only -->
+    <a href="#main" class="tw-absolute tw-left-[-9999px] focus:tw-left-4 focus:tw-top-4 focus:tw-bg-white focus:tw-text-black focus:tw-px-3 focus:tw-py-2 focus:tw-rounded focus:tw-z-50">Ir al contenido principal</a>
+
+    <!-- Header / Navigation reimplemented with Tailwind only -->
+    <header role="banner" class="tw-header tw-sticky tw-top-0 tw-z-50 tw-bg-white/60 tw-backdrop-blur-[10px] tw-border-b tw-border-black/5">
+        <nav class="navbar tw-relative tw-max-w-[1400px] tw-mx-auto tw-px-4 md:tw-px-6 tw-py-6 tw-flex tw-items-center tw-justify-between tw-h-16" role="navigation" aria-label="Main navigation">
+            <div class="tw-flex tw-items-center tw-gap-4">
+                <div class="tw-text-2xl tw-font-normal">
+                    <a href="#hero" aria-label="Villa Bonmont home" class="tw-font-serif tw-text-2xl tw-text-[var(--color-primary)] hover:tw-underline">Villa Bonmont Terres Noves</a>
+                </div>
+            </div>
+
+            <!-- Right side controls -->
+            <div class="tw-flex tw-items-center tw-gap-3">
+                <button id="themeToggle" class="theme-toggle tw-inline-flex tw-items-center tw-justify-center tw-p-2 tw-rounded-md tw-border tw-border-neutral-200 hover:tw-bg-neutral-100" aria-label="Cambiar tema" aria-pressed="false" title="Cambiar tema">🌞</button>
+
+                <!-- Mobile menu toggle -->
+                <button class="menu-toggle tw-inline-flex md:tw-hidden tw-flex-col tw-justify-between tw-w-10 tw-h-8 tw-gap-1" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)]"></span>
+                    <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)]"></span>
+                    <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-[var(--color-primary)]"></span>
+                </button>
+
+                <!-- Navigation menu: hidden on small screens, flex on md+ -->
+                <ul id="navMenu" class="nav-menu tw-list-none tw-m-0 tw-p-0 tw-hidden md:tw-flex md:tw-items-center md:tw-gap-8 tw-flex-col md:tw-flex-row tw-w-full md:tw-w-auto tw-bg-white md:tw-bg-transparent tw-absolute md:tw-static tw-top-[70px] tw-left-0 md:tw-left-auto md:tw-top-auto tw-shadow-md md:tw-shadow-none tw-p-0 md:tw-p-0" >
+                    <li class="tw-border-b tw-border-[#e5e5e5] md:tw-border-none"><a href="#hero" class="tw-block md:tw-inline-block tw-p-6 md:tw-p-0 tw-text-[0.9rem] tw-uppercase tw-tracking-[1px] tw-text-[var(--color-text)] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Inicio</a></li>
+                    <li class="tw-border-b tw-border-[#e5e5e5] md:tw-border-none"><a href="pages/interiors.html" class="tw-block md:tw-inline-block tw-p-6 md:tw-p-0 tw-text-[0.9rem] tw-uppercase tw-tracking-[1px] tw-text-[var(--color-text)] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Interiores</a></li>
+                    <li class="tw-border-b tw-border-[#e5e5e5] md:tw-border-none"><a href="pages/exteriors.html" class="tw-block md:tw-inline-block tw-p-6 md:tw-p-0 tw-text-[0.9rem] tw-uppercase tw-tracking-[1px] tw-text-[var(--color-text)] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Exteriores</a></li>
+                    <li class="tw-border-b tw-border-[#e5e5e5] md:tw-border-none"><a href="pages/equipamiento-bienestar.html" class="tw-block md:tw-inline-block tw-p-6 md:tw-p-0 tw-text-[0.9rem] tw-uppercase tw-tracking-[1px] tw-text-[var(--color-text)] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Equipamiento y Bienestar</a></li>
+                    <li class="tw-border-b tw-border-[#e5e5e5] md:tw-border-none"><a href="#lifestyle" class="tw-block md:tw-inline-block tw-p-6 md:tw-p-0 tw-text-[0.9rem] tw-uppercase tw-tracking-[1px] tw-text-[var(--color-text)] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">Estilo de vida</a></li>
+                    <li class="tw-border-b tw-border-[#e5e5e5] md:tw-border-none"><a href="pages/about.html" class="tw-block md:tw-inline-block tw-p-6 md:tw-p-0 tw-text-[0.9rem] tw-uppercase tw-tracking-[1px] tw-text-[var(--color-text)] hover:tw-bg-[var(--color-light)] hover:tw-text-[var(--color-secondary)]">La anfitriona</a></li>
+                    <li class="tw-border-none md:tw-border-none md:tw-ml-4"><a href="https://www.airbnb.es/rooms/42616703" class="tw-block md:tw-inline-block tw-p-6 md:tw-p-0 md:tw-px-4 md:tw-py-2 tw-bg-[var(--color-primary)] hover:tw-bg-neutral-900 tw-text-white tw-font-medium tw-rounded-md tw-text-[0.9rem]">Reservar</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <!-- Placeholder so skip link has a target -->
+        <section id="hero" class="tw-h-[320px] tw-flex tw-items-center tw-justify-center">
+            <h1 class="tw-text-2xl md:tw-text-3xl">Cabecera en Tailwind — prueba</h1>
+        </section>
+    </main>
+
+    <!-- Core JS (keeps existing behavior; no dependency on legacy CSS) -->
+    <script src="js/main.js"></script>
+
+    <script>
+        // Keep in-page mapping only — no reference to legacy stylesheet
+        (function(){
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.getElementById('menuToggle');
+
+            if (!navMenu || !menuToggle) return;
+
+            // When menuToggle is clicked, main.js toggles 'active' on both elements. Mirror it with tailwind classes.
+            function sync(){
+                if (navMenu.classList.contains('active')){
+                    navMenu.classList.remove('tw-hidden');
+                    navMenu.classList.add('tw-block');
+                    menuToggle.setAttribute('aria-expanded','true');
+                } else {
+                    navMenu.classList.remove('tw-block');
+                    navMenu.classList.add('tw-hidden');
+                    menuToggle.setAttribute('aria-expanded','false');
+                }
+            }
+
+            // Observe class changes to keep in sync (covers link click and outside click handlers in main.js)
+            const mo = new MutationObserver(sync);
+            mo.observe(navMenu, { attributes: true, attributeFilter: ['class'] });
+
+            // initialize correct state on load
+            window.addEventListener('load', sync);
+        })();
+    </script>
+</body>
+</html>

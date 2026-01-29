@@ -1,0 +1,45 @@
+name: Build Tailwind
+
+on:
+  push:
+    branches: [ main, 'fix/*', 'feat/*' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Print resolved Tailwind config
+        run: node -e "console.log(require('./tailwind.config.js'))"
+
+      - name: Build Tailwind (CLI)
+        run: npm run build:css
+
+      - name: Print generated CSS header
+        run: head -n 60 css/tailwind.generated.css || true
+
+      - name: Verify responsive classes exist
+        run: |
+          # Accept escaped or unescaped colons and optional spaces in @media
+          if grep -E "md\\:tw-|md:tw-|@media *\\(min-width: *768px\\)" -n css/tailwind.generated.css; then echo "Responsive classes present"; else echo "ERROR: responsive classes missing" && exit 1; fi
