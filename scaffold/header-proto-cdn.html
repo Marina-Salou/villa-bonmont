@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Header prototype — Tailwind CDN (tw-)</title>
+
+  <!-- Tailwind CDN config: use 'tw-' prefix -->
+  <script>tailwind = { config: { prefix: 'tw-' } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts used in tokens: Poppins + Crimson Text -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="tw-antialiased">
+
+  <a href="#main" class="skip-link">Ir al contenido principal</a>
+
+  <header class="tw-bg-white/60 tw-backdrop-blur-header tw-border-b tw-border-border tw-sticky tw-top-0 tw-z-50" role="banner">
+    <nav aria-label="Main navigation">
+      <div class="tw-max-w-[1400px] tw-mx-auto tw-px-[1rem] tw-py-[1.5rem] tw-flex tw-justify-between tw-items-center">
+        <a href="#hero" class="tw-font-serif tw-text-logo tw-text-primary tw-font-normal">Villa Bonmont Terres Noves</a>
+
+        <button id="menuToggle" class="menu-toggle md:tw-hidden tw-flex tw-flex-col tw-gap-[5px] tw-p-[0.5rem]" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+          <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-primary"></span>
+          <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-primary"></span>
+          <span class="tw-block tw-w-[25px] tw-h-[3px] tw-bg-primary"></span>
+        </button>
+
+        <ul id="navMenu" class="tw-hidden md:tw-flex tw-gap-[1rem] tw-items-center" role="menu">
+          <li><a class="tw-no-underline tw-text-inherit tw-uppercase tw-text-nav tw-tracking-nav">Inicio</a></li>
+          <li><a class="tw-no-underline tw-text-inherit tw-uppercase tw-text-nav tw-tracking-nav">Interiores</a></li>
+          <li><a class="cta-link tw-bg-primary tw-text-white tw-uppercase tw-py-[1rem] tw-px-[2rem] tw-tracking-cta">Reservar</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1" class="tw-mt-[6rem]">
+    <section class="tw-max-w-[900px] tw-mx-auto tw-px-[1rem]"><p>Prototype with Tailwind CDN — uses only <code>tw-</code> classes and token names.</p>
+      <div class="tw-h-[800px]"></div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('menuToggle');
+      const menu = document.getElementById('navMenu');
+      if(!btn || !menu) return;
+      function setOpen(open){
+        btn.classList.toggle('tw-active', open);
+        menu.classList.toggle('tw-hidden', !open);
+        menu.classList.toggle('tw-flex', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      btn.addEventListener('click', (e)=>{ e.stopPropagation(); setOpen(btn.getAttribute('aria-expanded') !== 'true'); });
+      document.addEventListener('click', (e)=>{ if(!btn.contains(e.target) && !menu.contains(e.target)) setOpen(false); });
+      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') setOpen(false); });
+    })();
+  </script>
+
+</body>
+</html>
