@@ -4,6 +4,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Header resets */
+  header ul { @apply tw-list-none tw-p-0 tw-m-0; }
+  header a { @apply tw-no-underline tw-text-inherit; }
+
+  /* Skip link: visible on focus */
+  .skip-link{
+    position: absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; z-index:1000;
+  }
+  .skip-link:focus{
+    left:1rem; top:1rem; width:auto; height:auto; padding:.5rem .75rem; background:#111; color:#fff; border-radius:4px; text-decoration:none;
+  }
+
+  /* Menu toggle transforms on active */
+  .menu-toggle span{ display:block }
+  .menu-toggle.tw-active span:nth-child(1){ transform: rotate(45deg) translate(8px,8px) }
+  .menu-toggle.tw-active span:nth-child(2){ opacity: 0 }
+  .menu-toggle.tw-active span:nth-child(3){ transform: rotate(-45deg) translate(7px,-7px) }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .menu-toggle span{ transition:none!important }
+  }
+
+  /* Demo helper */
+  .demo-content{ height:900px; padding:2rem; }
+}
+
 /* Example usage (all new classes must use the tw- prefix):
    <div class="tw-bg-white tw-shadow-md tw-rounded-lg tw-p-4">...</div>
 */
