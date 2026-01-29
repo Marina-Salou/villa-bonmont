@@ -3,49 +3,28 @@
    Navigation, Modal, and DOM Manipulation
    ============================================ */
 
-// Menu Toggle (Tailwind-first)
+// Menu Toggle
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 
 menuToggle.addEventListener('click', () => {
-    // animation helper (kept for transforms)
     menuToggle.classList.toggle('active');
-    // toggle visibility on small screens using Tailwind utility
-    const isHidden = navMenu.classList.toggle('tw-hidden');
-    // update accessibility state
-    menuToggle.setAttribute('aria-expanded', String(!isHidden));
-
-    // animate hamburger -> X using Tailwind utilities toggled on spans
-    const spans = Array.from(menuToggle.querySelectorAll('span'));
-    if (spans.length === 3) {
-        // top
-        spans[0].classList.toggle('tw-translate-y-1');
-        spans[0].classList.toggle('tw-rotate-45');
-        // middle
-        spans[1].classList.toggle('tw-opacity-0');
-        // bottom
-        spans[2].classList.toggle('-tw-translate-y-1');
-        spans[2].classList.toggle('-tw-rotate-45');
-    }
+    navMenu.classList.toggle('active');
 });
 
 // Close menu when clicking on a link
 navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
-        // ensure hidden on small screens
-        navMenu.classList.add('tw-hidden');
-        menuToggle.setAttribute('aria-expanded', 'false');
+        navMenu.classList.remove('active');
     });
 });
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    // use semantic <nav> rather than legacy class
-    if (!e.target.closest('nav')) {
+    if (!e.target.closest('.navbar')) {
         menuToggle.classList.remove('active');
-        navMenu.classList.add('tw-hidden');
-        menuToggle.setAttribute('aria-expanded', 'false');
+        navMenu.classList.remove('active');
     }
 });
 
@@ -153,7 +132,7 @@ if ('IntersectionObserver' in window) {
 // Smooth scroll for internal links (already done by html { scroll-behavior: smooth; })
 // but add active state highlighting
 window.addEventListener('scroll', () => {
-    const nav = document.querySelectorAll('#navMenu a');
+    const nav = document.querySelectorAll('.nav-menu a');
     let current = '';
 
     document.querySelectorAll('section').forEach(section => {
@@ -164,11 +143,15 @@ window.addEventListener('scroll', () => {
     });
 
     nav.forEach(link => {
-        // remove visual active classes (Tailwind only)
-        link.classList.remove('tw-font-semibold', 'tw-text-[var(--color-secondary)]');
+        link.classList.remove('active');
         const href = link.getAttribute('href');
-        if ((href && href.startsWith('#') && href.slice(1) === current) || (href && href.includes('#') && href.split('#')[1] === current)) {
-            link.classList.add('tw-font-semibold', 'tw-text-[var(--color-secondary)]');
+        if (href.startsWith('#') && href.slice(1) === current) {
+            link.classList.add('active');
+        } else if (href.includes('#')) {
+            const id = href.split('#')[1];
+            if (id === current) {
+                link.classList.add('active');
+            }
         }
     });
 });
@@ -209,7 +192,7 @@ if (contactForm) {
 
 // Highlight current nav link based on URL (adds aria-current="page" and .active)
 function highlightCurrentNav() {
-    const links = document.querySelectorAll('#navMenu a');
+    const links = document.querySelectorAll('.nav-menu a');
     const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
 
     links.forEach(link => {
@@ -221,11 +204,10 @@ function highlightCurrentNav() {
             const linkPath = url.pathname.replace(/\/$/, '') || '/';
 
             if (linkPath === currentPath) {
-                // Tailwind-only active state
-                link.classList.add('tw-font-semibold', 'tw-text-[var(--color-secondary)]');
+                link.classList.add('active');
                 link.setAttribute('aria-current', 'page');
             } else {
-                link.classList.remove('tw-font-semibold', 'tw-text-[var(--color-secondary)]');
+                link.classList.remove('active');
                 if (link.getAttribute('aria-current') === 'page') link.removeAttribute('aria-current');
             }
         } catch (e) {
